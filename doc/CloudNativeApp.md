@@ -18,7 +18,7 @@
 - 컨테이너는 운영체제 커널을 공유하여 훨씬 가볍고 구동이 빠르며, 운영체제 전체 부팅보다 메모리를 훨씬 적게 차지하게 된다.
 - 컨테이너 기술은 운영체제와 독립적으로 분리되어 애플리케이션을 실행할 수 있도록 지원하므로, 동일한 컨테이너 런타임만 사용한다면 어떤 클라우드 환경에서든 컨테이너를 자유롭게 이식하여 실행시킬 수 있다.
 
-![img](.\assets\clip_image076.gif)
+![img](./assets/clip_image076.gif)
 
  
 
@@ -61,7 +61,7 @@
 
 
 
-![img](.\assets\image-20220810134110574.png)
+![img](./assets/image-20220810134110574.png)
 
 [그림 2-3] CNCF Cloud Native Landscape
 
@@ -198,7 +198,7 @@
 
  
 
-![img](D:\cloudnative\assets\1-1.jpg)
+![img](D:\cloudnative/assets/1-1.jpg)
 
 [그림 3-1] 클라우드 네이티브 애플리케이션 구성요소
 
@@ -215,7 +215,7 @@
 
 https://12factor.net/ko/
 
-  ![img](.\assets\V9nAWbd-c9635361688ff77f82ccc7b1bdefd891.png)
+  ![img](./assets/V9nAWbd-c9635361688ff77f82ccc7b1bdefd891.png)
 
 - 12 Factors란, 클라우드 플랫폼 제공 회사인 헤로쿠(Heroku)라는 기업에서 자사의 클라우드 플랫폼 모델을 사용하는 기업들의 애플리케이션 개발, 운영, 확장 등을 관찰하고, 개발 엔지니어와 개발 회사로부터의 얻은 노하우를 바탕으로 정리한 개발 방법론이자 안내서이다. 
 -  클라우드 플랫폼의 일반적인 동적 환경 프로비저닝 요구 사항을 충족하도록 애플리케이션을 이식 가능하게 만드는 것입니다. 
@@ -501,7 +501,7 @@ Spring Boot 애플리케이션에서 관리 기능을 일회성 프로세스로 
 
 ## 1.3 모놀리스와 클라우드 네이티브 애플리케이션의 차이점
 
- <img src=".\assets\image-20220810135438142.png" alt="image-20220810135438142" style="zoom:150%;" />
+ <img src="./assets/image-20220810135438142.png" alt="image-20220810135438142" style="zoom:150%;" />
 
 [그림 3-2] 모놀리스와 마이크로서비스 아키텍처의 차이16)
 
@@ -577,7 +577,7 @@ Spring Boot 애플리케이션에서 관리 기능을 일회성 프로세스로 
 - 클라우드 네이티브 아키텍처를 구성하는 각각의 기술 스택들은 애플리케이션을 보다 빠르게 개발하고, 관리하기 쉽도록 모니터링 기술을 지원하며, 클라우드 상에 배포되는 시간을 단축하여, 더 자주 배포하는 것을 목표로 한다. 
 - CNCF의 TOC(Technical Oversight Committee) 대표인 Ken Owens는 이러한 클라우드 네이티브 관련 기술 스택들 간의 호환성과 표준화를 위해 다음과 같은 클라우드 네이티브 참조 아키텍처를 제시하였다.
 
- ![img](.\assets\clip_image115.jpg)
+ ![img](./assets/clip_image115.jpg)
 
 [그림 4-1] 클라우드 네이티브 참조 아키텍처
 
@@ -593,7 +593,7 @@ Spring Boot 애플리케이션에서 관리 기능을 일회성 프로세스로 
 
 위에서 설명한 클라우드 네이티브 참조 아키텍처에서는 제일 먼저 비즈니스 도메인에 맞는 실행 환경과 애플리케이션을 설계 및 개발한 다음, 컨테이너 가상화 기술에 의해 배포하고 관리 도구를 사용해 애플리케이션의 상태와 개선 사항을 주기적으로 확인하도록 하고 있다.
 
-​                 ![텍스트 상자: 애플리케이션 설계 → 개발 → 컨테이너에 배포 → 관리](.\assets\clip_image001.png)    
+​                 ![텍스트 상자: 애플리케이션 설계 → 개발 → 컨테이너에 배포 → 관리](./assets/clip_image001.png)    
 
 
 
@@ -665,7 +665,7 @@ https://landscape.cncf.io/
 
   ​	\- Chaos Engineering: Gremlin
 
-<img src=".\assets\image-20220810140046458.png" alt="image-20220810140046458" style="zoom:150%;" />
+<img src="./assets/image-20220810140046458.png" alt="image-20220810140046458" style="zoom:150%;" />
 
 
 
@@ -677,7 +677,7 @@ https://landscape.cncf.io/
 
 - Cloud Native TrailMap에서는 Cloud Native Landscape 프로젝트의 수많은 기술 스택 중에 클라우드 네이티브 애플리케이션 구축에 필요한 기술 및 개발, 운영에 권장되는 프로세스를 소개하고 있다.
 
-![Cloud Native Trail Map infographic](.\assets\CNCF_TrailMap_latest-1.png)
+![Cloud Native Trail Map infographic](./assets/CNCF_TrailMap_latest-1.png)
 
 [그림 4-3] Cloud Native TrailMap
 
@@ -879,11 +879,11 @@ DevOps는 애플리케이션의 전체 수명주기에 걸쳐 각 작업의 소�
 
 레이어드 아키텍처(계층 형 아키텍처:Layered Architecture)를 구성하는 레이어는 많은 사람들이 혼동하는 물리적인 티어(Tier)의 개념과 달리 논리적인 개념이다. 티어는 물리적인 장비, 서버 컴퓨터 등의 물리 층을 의미하고 레이어는 티어 내부의 논리적인 분할을 의미한다. 아래 그림과 같이 물리적인 서버 티어의 레이어(이하:계층)를 프레젠테이션(Presentation) , 비지니스 로직(Business Logic), 데이터 액세스(Data Access) 3개의 논리적인 계층으로 구분할 수 있다.
 
-![티어와 레이어](.\assets\MSA_3.2.png)
+![티어와 레이어](./assets/MSA_3.2.png)
 
 계층은 설계자들이 복잡한 시스템을 분리할 때 흔히 사용하는 패턴 중 하나로 어플리케이션이 내부에서 처리하는 관심사를 논리적으로 구분한다. 다음은 마틴 파울러가 그의 책 ‘엔터프라이즈 애플리케이션 아키텍처 패턴(Enterprise Application Architecture Pattern)’ 에서 구분한 레이어드 아키텍처 패턴 전형적인 유형이다. 아키텍트가 의도하는 방향에 따라 여러가지로 구분 가능하나 일반적으로 **프레젠테이션, 비즈니스 로직, 데이터 액세스**의 3계층으로 구분하는 경향이 일반적이다.
 
-![전통적인3계층 아키텍처](.\assets\MSA_3.3.png)
+![전통적인3계층 아키텍처](./assets/MSA_3.3.png)
 
 프레젠테이션 층의 관심사는 화면 표현 및 전환 처리이고 비즈니스 로직층의 관심사는 비즈니스 개념 및 규칙, 흐름 제어이며 데이터 액세스 층의 관심사는 데이터 처리이다.
 
@@ -895,11 +895,11 @@ DevOps는 애플리케이션의 전체 수명주기에 걸쳐 각 작업의 소�
 - 하위 계층은 자신을 사용하는 상위 계층을 알지 못하게 구성해야 한다.
 - 계층 간의 호출은 인터페이스를 통해 호출하는 것이 바람직하다. (구현 클래스에 직접 의존하지 않음으로써 약한 결합을 유지해야 한다.)
 
-![레이어드 아키텍처 규칙](.\assets\MSA_3.4.png)
+![레이어드 아키텍처 규칙](./assets/MSA_3.4.png)
 
 특히 인터페이스를 통한 의존성 분리는 인터페이스를 구현하는 구현체를 다양하게 해주는 다형성을 추구함으로써 제어 흐름을 간접적으로 전환하게 해준다. 아래 그림을 보면 상위 계층은 직접적으로 하위 계층을 호출하지 않고 추상적인 인터페이스를 의존한다. 이럴 경우 하위레이어는 추상적 인터페이스를 만족하는 다양한 방식의 구현체를 선택적으로 적용할 수 있다.
 
-![인터페이스 호출을 통한 다형성 추구](.\assets\MSA_3.5.png)
+![인터페이스 호출을 통한 다형성 추구](./assets/MSA_3.5.png)
 
 이러한 방식은 로버트 C 마틴이 정의한 객체지향의 원칙의 **의존성 역전 원칙(Dependency Inversion Principle)** 을 만족하는 것처럼 보인다. 의존성 역전의 원칙은 ‘유연성이 극대화된 시스템’이란 소스 코드 의존성이 추상에 의존하며 구체에는 의존하지 않아야 한다’라고 말하기 때문이다.
 
@@ -974,7 +974,7 @@ DevOps는 애플리케이션의 전체 수명주기에 걸쳐 각 작업의 소�
 
 ### 3.1.1 스프링의 개념
 
-![image](.\assets\spring_logo.png)
+![image](./assets/spring_logo.png)
 
 Spring은 무엇일까요? 스프링은 **자바 기반의 웹 어플리케이션을 만들 수 있는 프레임워크**입니다. spring.io 사이트에서 확인하면 **스프링 프레임워크는 현대 자바 기반의 엔터프라이즈 어플리케이션을 위한 프로그래밍 및 Configuration Model 제공한다**라고 언급하고 있습니다.
 
@@ -1015,11 +1015,11 @@ Spring의 특징들은 아래와 같습니다.
 
 ## 3.2. Spring Boot란
 
-![image](.\assets\spring_boot_logo.png)
+![image](./assets/spring_boot_logo.png)
 
 `스프링 부트(Spring Boot)`는 **스프링(Spring)을 더 쉽게 이용하기 위한 도구**라고 볼 수 있습니다. 스프링 이용하여 개발을 할 때, 이것저것 세팅을 해야 될 요소들이 많습니다. 여러가지를 세팅해야되는 진입 장벽이 존재하여 Spring 을 처음 배우려는 사람들은 중도에 그만두는 경우가 많다고 합니다. Spring Boot는 매우 간단하게 프로젝트를 설정할 수 있게 하여, Spring 개발을 조금 더 쉽게 만들어주는 역할을 하고 있습니다.
 
-![image](.\assets\spring_boot2.png)
+![image](./assets/spring_boot2.png)
 
 위의 구조에서 나온 것과 같이 User는 스프링을 사용하기 위해서 이것저것 다양한 설정을 직접 해줘야된다는 문제점이 있습니다. 개발자가 실행환경이나 의존성 관리 등의 인프라 관련 등에 쓰는 에너지가 소요됩니다. 프로그래밍을 하는 데 있어 매우 중요한 **비즈니스를 만들기 위한 프로그래밍**에 조금 더 에너지를 투입할 수 있게 Spring의 많은 부분을 자동화하였고, 많은 개발자들이 현재 Spring Boot을 이용하여 개발을 진행하고 있습니다.
 
@@ -1546,7 +1546,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 이 서비스는 `TotalRentalService`를 구현하여 `RentalHistory rent(RentalTarget)`라는 인터페이스를 제공하고 있습니다. 만약 MVC 패턴을 채택했다면 이 서비스의 `rent()`를 사용하는 것은 컨트롤러입니다. 컨트롤러는 다시 HTTP를 통한 인터페이스를 클라이언트에게 제공하여 클라이언트가 `TotalRentalService`를 이용할 수 있도록 중간 역할을 합니다. 이를 그림으로 나타내면 다음과 같습니다.
 
-![img](.\assets\1657785410947.png)그림] 클라이언트와 애플리케이션의 통신 간 컨트롤러의 위치와 역할
+![img](./assets/1657785410947.png)그림] 클라이언트와 애플리케이션의 통신 간 컨트롤러의 위치와 역할
 
  
 
@@ -1554,7 +1554,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 한편 `TotalRentalService`의 구현체는 내부적으로 `CustomerRepository`나 `RentalRepository`, `InventoryService` 인터페이스를 사용합니다. 만약 `Repository`가 데이터의 영속을 위해 Redis를 사용한다면 아래 그림과 같이 표현할 수 있습니다.
 
-![img](.\assets\1657785452997.png)그림] 애플리케이션과 기반 요소의 통신 간 Repository의 위치와 역할
+![img](./assets/1657785452997.png)그림] 애플리케이션과 기반 요소의 통신 간 Repository의 위치와 역할
 
  
 
@@ -1562,7 +1562,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 아래는 포트와 어댑터 아키텍처를 따른 소프트웨어와 인터페이스, 기반 요소와의 관계를 표현한 그림입니다. 
 
-![img](.\assets\1657785510912.png)그림 3. 포트와 어댑터의 추상적인 개념
+![img](./assets/1657785510912.png)그림 3. 포트와 어댑터의 추상적인 개념
 
  
 
@@ -4182,7 +4182,7 @@ Span ID는 각 트래픽의 고유 ID입니다.
 
 그림으로 표현하면 아래와 같습니다.
 
-![img](.\assets\trace.png)
+![img](./assets/trace.png)
 
 
 
@@ -4198,7 +4198,7 @@ Trace정보를 Zipkin에 송부하기 위해서는 Zipkin client를 적용해야
 
 
 
-![img](.\assets\img2.png)
+![img](./assets/img2.png)
 
  
 
@@ -4286,7 +4286,7 @@ zipkin.base-url은 zipkin service의 서비스명과 포트입니다.
 
  
 
-![image-20220817110036458](.\assets\image-20220817110036458.png)
+![image-20220817110036458](./assets/image-20220817110036458.png)
 
 [그림 5-1] Pilot Application의 서비스 흐름
 
@@ -4336,7 +4336,7 @@ zipkin.base-url은 zipkin service의 서비스명과 포트입니다.
 
  
 
-![](.\assets\demo-archi.png)
+![](./assets/demo-archi.png)
 
  
 
@@ -4389,7 +4389,7 @@ java -jar zipkin.jar
 }
 ```
 
- ![image-20220823095439646](.\assets\image-20220823095439646.png)
+ ![image-20220823095439646](./assets/image-20220823095439646.png)
 
 
 
@@ -4401,7 +4401,7 @@ java -jar zipkin.jar
 
 아직 사용자가 주문한 상품이 없기 때문에, “orders” 항목은 비어 있는 것을 확인할 수 있다.
 
-![image-20220823095520646](.\assets\image-20220823095520646.png)
+![image-20220823095520646](./assets/image-20220823095520646.png)
 
 
 
@@ -4411,7 +4411,7 @@ java -jar zipkin.jar
 
 다음으로 카탈로그 서비스로부터 등록된 상품의 목록을 가져오도록 하자.
 
-![image-20220823095529925](.\assets\image-20220823095529925.png)
+![image-20220823095529925](./assets/image-20220823095529925.png)
 
  
 
@@ -4429,11 +4429,11 @@ java -jar zipkin.jar
 }
 ```
 
- ![image-20220823095605044](.\assets\image-20220823095605044.png)
+ ![image-20220823095605044](./assets/image-20220823095605044.png)
 
 주문한 상품의 내용을 주문 서비스가 사용하고 있는 데이터베이스에서 확인해 보면 다음과 같다.
 
- ![image-20220823095613029](.\assets\image-20220823095613029.png)
+ ![image-20220823095613029](./assets/image-20220823095613029.png)
 
 [그림 5-16] 주문 서비스의 H2 데이터베이스 조회 화면
 
@@ -4445,7 +4445,7 @@ java -jar zipkin.jar
 
 조금 전에 주문했던 내용은 상품 주문 조회 서비스를 통해 확인할 수 있다. 각 사용자 별로 주문한 내용을 확인해 볼 수 있다.
 
- ![image-20220823095640224](.\assets\image-20220823095640224.png)
+ ![image-20220823095640224](./assets/image-20220823095640224.png)
 
  
 
@@ -4455,7 +4455,7 @@ java -jar zipkin.jar
 
 3.1절에서 테스트한 Pilot Application은 상품 주문이 요청되었을 때, 주문 서비스로 사용자가 요청한 주문 정보를 전달하게 된다. 그리고 사용자 서비스에서 사용자의 정보 확인 시, 해당 사용자가 주문한 상품의 목록을 확인할 수 있는데 여기에서 사용자 마이크로서비스로부터 주문 마이크로서비스로 주문 상품 목록을 요청하게 된다. 이 작업을 위해, Pilot Application에서는 Spring Cloud의 FeignClient를 이용하여 사용자 서비스에서 주문 서비스로 정보를 요청하고 있다. 
 
- <img src=".\assets\image-20220823095858586.png" alt="image-20220823095858586" style="zoom:150%;" />
+ <img src="./assets/image-20220823095858586.png" alt="image-20220823095858586" style="zoom:150%;" />
 
 
 
@@ -4465,21 +4465,21 @@ java -jar zipkin.jar
 
 Publisher는 어떤 Consumer가 메시지를 받는지 상관하지 않고 Kafka Messaging Service에게만 메시지를 전달하면되고, Consumer도 어떤 Publisher가 보냈는지 상관하지 않고 Kafka Messaging Service로부터 메시지를 받게 된다.
 
-![image-20220823095917308](.\assets\image-20220823095917308.png)
+![image-20220823095917308](./assets/image-20220823095917308.png)
 
-![image-20220823095934001](.\assets\image-20220823095934001.png)
+![image-20220823095934001](./assets/image-20220823095934001.png)
 
  Consumer에서는 Kafka Messaging Service에 메시지가 전달되면 이벤트에 의해 메시지를 전달 받게 된다. 카탈로그 서비스에서 KafkaListener라는 어노테이션을 등록하여 Kafka Messaging Service로부터 메시지를 받겠다고 선언하면, Kafka의 토픽에 전달된 메시지가 있을 경우 바로 전달 받을 수 있게 된다.
 
- ![image-20220823095943587](.\assets\image-20220823095943587.png)
+ ![image-20220823095943587](./assets/image-20220823095943587.png)
 
-![image-20220823095952822](.\assets\image-20220823095952822.png)
+![image-20220823095952822](./assets/image-20220823095952822.png)
 
 카탈로그 서비스에서는 Kafka Messaging Service로부터 전달 받은 주문 상품의 수량만큼 해당 상품의 수량을 업데이트 하게 된다.
 
 다시 한 번 카탈로그 서비스의 상품 목록을 확인해 보면 다음과 같이 수량이 변경된 것을 확인할 수 있다.
 
- ![image-20220823100009787](.\assets\image-20220823100009787.png)
+ ![image-20220823100009787](./assets/image-20220823100009787.png)
 
 
 
@@ -4703,7 +4703,7 @@ SpringContainer를 로드하지않고 테스트를 위한 기능만 제공한다
 테스트에 Spring이 필요없이 순수한 단위 테스트만 필요하다면 위 코드를 추가하면 된다.
 
 Controller, Service, Repository 및 HelloWorld에 대한 테스트 코드 전체를 실행했는데 모두 통과했다.
-![Alt](D:\GitHub\cloudnative\doc\assets\dev-spring-unittest-success.png)
+![Alt](D:\GitHub\cloudnative\doc/assets/dev-spring-unittest-success.png)
 
 ### 3.8.4 컨테이너 환경에서 서비스를 실행해 보세요.
 
