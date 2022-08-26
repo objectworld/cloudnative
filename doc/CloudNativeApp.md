@@ -4499,17 +4499,40 @@ MSA 환경에는 카탈로그 서비스에 대량으로 조회가 발생하더�
 
 
 
-## 4.8 리펙토링
-
-### 3.8.1 Hexagonal 아키텍처(Port and Adapter 패턴)에 맞게 서비스를 리펙토링 해 보세요.
+## 4.9 테스트
 
 
 
-### 3.8.2 성능을 고려하여 서비스를 개선해 보세요.
+| 서비스 명       | URI                                                          | 설명                   |
+| --------------- | ------------------------------------------------------------ | ---------------------- |
+| User service    | http://localhost:50001/swagger-ui/index.html                 | API 테스트             |
+|                 | http://localhost:50001/h2-console/                           | H2 DB 콘솔             |
+|                 | curl -X 'POST' 'http://localhost:50001/actuator/refresh' -H 'accept: */*' | 프로퍼티 갱신          |
+| Catalog Service | http://localhost:50003/swagger-ui/index.html                 | API 테스트             |
+|                 | http://localhost:50003/h2-console/                           | H2 DB 콘솔             |
+|                 | curl -X 'POST' 'http://localhost:50003/actuator/refresh' -H 'accept: */*' | 프로퍼티 갱신          |
+| Order service   | http://localhost:50002/swagger-ui/index.html                 | API 테스트             |
+|                 | http://localhost:50002/h2-console/                           | H2 DB 콘솔             |
+|                 | curl -X 'POST' 'http://localhost:50002/actuator/refresh' -H 'accept: */*' | 프로퍼티 갱신          |
+| API Gateway     | curl -X 'GET' 'http://localhost/user-ms/users' -H 'accept: */*'<br/>curl -X 'GET' 'http://localhost/catalog-ms/catalogs' -H 'accept: */*'<br />curl -X 'GET' 'http://localhost/order-ms/orders' -H 'accept: */*' | API 테스트             |
+| Eureka          | http://localhost:8761/                                       | 서비스 디스커버리 확인 |
+| Zipkin          | http://localhost:9411/                                       | 서비스 추적            |
+| Config          | http://localhost:8888/order-ws/local<br />http://localhost:8888/catalog-ws/local<br />http://localhost:8888/user-ws/local | 프로퍼티 조회          |
+| Redis           | cd D:\cloudnative\infra\Redis-x64-3.2.100<br/>.\redis-server.exe .\redis.windows.conf<br />.\redis-cli.exe<br />keys *<br />del key "catalogs::SimpleKey []" | Redis 키 조회/삭제     |
+
+ 
+
+## 4.10 리펙토링
+
+### 3.10.1 Hexagonal 아키텍처(Port and Adapter 패턴)에 맞게 서비스를 리펙토링 해 보세요.
 
 
 
-### 3.8.3 JUNIT을 활용한 테스트코드를 작성해 보세요.
+### 4.10.2 성능을 고려하여 서비스를 개선해 보세요.
+
+
+
+### 4.10.3 JUNIT을 활용한 테스트코드를 작성해 보세요.
 
 # SpringBoot Service와 Repository의 단위 테스트 방법
 
