@@ -1,0 +1,4 @@
+com:
+  test:
+    profile: local
+    region: order-ws

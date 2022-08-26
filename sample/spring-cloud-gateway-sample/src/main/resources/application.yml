@@ -1,0 +1,67 @@
+server:
+  port: 80
+ 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+      #defaultZone: http://localhost:8761/eureka
+  #instance:
+    #prefer-ip-address: true
+    #ip-address: ${DOCKER_HOST_IP}      
+ 
+spring:
+  application:
+    name: demo-gateway
+  profiles:
+    active: local
+  sleuth: 
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411    
+    sender.type: web  
+  redis:
+    host: localhost
+    port: 6379    
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10 # {통계건수}
+        minimumNumberOfCalls: 10 # {최소요청횟수}
+        failureRateThreshold: 60 # {실패율}
+        slowCallRateThreshold: 60 # {느린요청비율}
+        slowCallDurationThreshold: 3000 # {느린요청으로 간주할 시간}
+        permittedNumberOfCallsInHalfOpenState: 2
+        waitDurationInOpenState: 60000 # {Circuit Breaker유지시간}        
+        eventConsumerBufferSize: 10
+  instances:
+    testcirguitbreaker:
+        baseConfig: default
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+    redis:
+      enabled: false
+        
+logging: 
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.sleuth: DEBUG

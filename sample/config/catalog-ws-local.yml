@@ -1,0 +1,4 @@
+com:
+  test:
+    profile: local2
+    region: catalog-ws

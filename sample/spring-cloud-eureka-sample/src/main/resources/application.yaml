@@ -1,0 +1,16 @@
+server:
+  port: 8761
+ 
+spring:
+  application:
+    name: discoverservice
+ 
+eureka:
+#  server:
+#    enableSelfPreservation: false
+#  instance:
+#    prefer-ip-address: true
+#    ip-address: ${DOCKER_HOST_IP}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
