@@ -144,7 +144,7 @@ https://12factor.net/ko/
 
 - 12 Factors란, 클라우드 플랫폼 제공 회사인 헤로쿠(Heroku)라는 기업에서 자사의 클라우드 플랫폼 모델을 사용하는 기업들의 애플리케이션 개발, 운영, 확장 등을 관찰하고, 개발 엔지니어와 개발 회사로부터의 얻은 노하우를 바탕으로 정리한 개발 방법론이자 안내서이다. 
 -  클라우드 플랫폼의 일반적인 동적 환경 프로비저닝 요구 사항을 충족하도록 애플리케이션을 이식 가능하게 만드것이다.
-  - **선언적 형식** 을 사용하여 설정을 자동화합니다.
+  - **선언적 형식** 을 사용하여 설정을 자동화한다.
   - 실행 환경 **간 이식성 극대화**
   - **Cloud Platform** 에 배포하기에 적합
   - 민첩성을 극대화하기 위해 지속적인 배포를 가능하게 하여 **개발과 생산 간의 차이 최소화**
@@ -158,7 +158,7 @@ https://12factor.net/ko/
 
 - **이는 단일 개인 또는 그룹과 함께 애플리케이션의 명확한 소유권을 설정하는 데 도움이 된다.** 애플리케이션에는 새로운 기능, 결함 수정 및 기존 기능에 대한 업그레이드로 발전하는 단일 코드베이스가 있다. 애플리케이션 소유자는 애플리케이션 수명 동안 다양한 버전을 빌드하고 테스트, 스테이징 및 프로덕션과 같은 여러 환경에 배포할 책임이 있다.
 
-- 이 원칙은 여러 환경에 구축 및 배포할 수 있는 단일 코드베이스를 갖는 것을 옹호합니다. 각 환경에는 데이터베이스, 구성 데이터 및 API URL과 같은 특정 리소스 구성이 있습니다. 이를 달성하려면 모든 환경 종속성을 애플리케이션의 빌드 및 실행 단계에서 지정할 수 있는 형식으로 분리해야 한다.
+- 이 원칙은 여러 환경에 구축 및 배포할 수 있는 단일 코드베이스를 갖는 것을 옹호한다. 각 환경에는 데이터베이스, 구성 데이터 및 API URL과 같은 특정 리소스 구성이 있다. 이를 달성하려면 모든 환경 종속성을 애플리케이션의 빌드 및 실행 단계에서 지정할 수 있는 형식으로 분리해야 한다.
 
 - 이는 선언적 형식을 사용하여 환경 간 이식성을 극대화하는 Twelve-Factor App의 처음 두 가지 목표를 달성하는 데 도움이 된다..
 
@@ -182,7 +182,7 @@ git push -u origin master
 
 - **종속성은 애플리케이션 간에 코드를 재사용하기 위한 지침을 제공한다. 재사용 가능한 코드 자체는 단일 코드베이스로 유지되지만 라이브러리 형태로 패키지화되어 여러 애플리케이션에 배포된다.**
 
-- 애플리케이션의 가장 가능성 있는 종속성은 오픈 소스 라이브러리 또는 다른 팀에서 사내 구축한 라이브러리이다. 종속성은 호스트 시스템에 설치된 특정 소프트웨어의 형태를 취할 수도 있습니다. 플랫폼의 종속성 관리 도구를 활용하여 외부 파일에 종속성을 선언한다.
+- 애플리케이션의 가장 가능성 있는 종속성은 오픈 소스 라이브러리 또는 다른 팀에서 사내 구축한 라이브러리이다. 종속성은 호스트 시스템에 설치된 특정 소프트웨어의 형태를 취할 수도 있다. 플랫폼의 종속성 관리 도구를 활용하여 외부 파일에 종속성을 선언한다.
 
 - Spring Boot 애플리케이션의 경우 파일에 종속성을 선언 `pom.xml`한다.(또는 `build.gradle`Gradle을 사용하는 경우). `spring-boot-starter-web`다음은 종속성 중 하나로 사용하는 Spring Boot 애플리케이션의 예이다.
 
@@ -193,11 +193,11 @@ git push -u origin master
     </dependency>
 ```
 
-- 이 원칙은 공유 클래스 경로에 라이브러리를 저장하여 애플리케이션 간에 라이브러리를 공유하는 이전 관행에서 발전된 것입니다. 이 접근 방식을 사용하면 호스트 시스템 구성과의 결합이 발생하게 된다.
+- 이 원칙은 공유 클래스 경로에 라이브러리를 저장하여 애플리케이션 간에 라이브러리를 공유하는 이전 관행에서 발전된 것이다. 이 접근 방식을 사용하면 호스트 시스템 구성과의 결합이 발생하게 된다.
 
-- 종속성을 지정하는 선언적 스타일은 이 결합을 제거합니다.
+- 종속성을 지정하는 선언적 스타일은 이 결합을 제거한다.
 
-- Spring Boot를 사용하는 맥락에서 Maven/Gradle과 같은 종속성 도구를 사용할 때 다음을 얻습니다.
+- Spring Boot를 사용하는 맥락에서 Maven/Gradle과 같은 종속성 도구를 사용할 때 다음을 장점을 제공한다.
   - 애플리케이션이 작동하는 종속성의 특정 버전을 선언하여 **버전 관리**
 
   - 애플리케이션과 종속성을 번들링하여 **격리 .**
@@ -206,7 +206,7 @@ git push -u origin master
 
 #### 3) Configurations - Configuration Properties의 외부화
 
-> 환경에 구성을 저장합니다..
+> 환경에 구성을 저장한다..
 
 - 환경이 클라우드에서 동적으로 프로비저닝 될때 결정이 되므로 애플리케이션을 개발하는 동안 사용할 수 있는 Configuration Properties가 거의 없다.
 
@@ -253,7 +253,7 @@ git push -u origin master
 
 - 이런 식으로 JDBC URL을 변경하여 데이터베이스를 교체할 수 있다. 그리고 종속성을 변경하여 기본 데이터베이스를 교체할 수 있다.
 
-- H2 데이터베이스에 대한 종속성의 스니펫은 다음과 같습니다.
+- H2 데이터베이스에 대한 종속성의 스니펫은 다음과 같다.
 
 ```xml
     <dependency>
@@ -267,7 +267,7 @@ git push -u origin master
     </dependency>
 ```
 
-- H2 데이터베이스를 Oracle 또는 MySQL과 같은 다른 RDBMS로 쉽게 교체할 수 있습니다. JPA와 유사하게 메시징에는 JMS를, 메일에는 SMTP를 사용할 수 있습니다.
+- H2 데이터베이스를 Oracle 또는 MySQL과 같은 다른 RDBMS로 쉽게 교체할 수 있다. JPA와 유사하게 메시징에는 JMS를, 메일에는 SMTP를 사용할 수 있다.
 
 #### 5) Build, Release and Run - 개발 워크플로를 위한 컨테이너 활용
 
@@ -275,12 +275,12 @@ git push -u origin master
 
 - **빌드, 릴리스 및 실행 단계를 별도로 유지해야 한다. 이 분리는 응용 프로그램 충실도와 무결성을 유지하는 데 중요하다.**
 
-- 이러한 단계는 순서대로 발생합니다. 각 단계는 다른 목표를 갖고 다음 단계로 전파되는 아웃풋을 생성한다..
+- 이러한 단계는 순서대로 발생한다. 각 단계는 다른 목표를 갖고 다음 단계로 전파되는 아웃풋을 생성한다.
 
 - 긴급 수정을 포함한 모든 코드 변경은 빌드 단계에서 발생해야 하며 프로덕션으로 승격되기 전에 설정된 릴리스 주기를 따라야 한다. 예를 들어 프로덕션 환경에서 작은 수정을 함으로써 이 원칙을 위반하면 빌드 단계로 전파하기 어렵게 만들고 기존 분기를 방해하며 무엇보다도 이 관행을 따르는 데 따른 위험과 전체 비용을 증가시킨다.
 
 - Spring Boot 애플리케이션의 경우 컨테이너용 개발 워크플로우를 사용하여 쉽게 달성할 수 있다.
-  - **Build** : 소스 코드를 컴파일하고 Docker 이미지를 빌드합니다.
+  - **Build** : 소스 코드를 컴파일하고 Docker 이미지를 빌드한다.
 
     ```shell
     mvn clean compile jib:build
@@ -289,14 +289,14 @@ git push -u origin master
     docker build <image_id> Dockerfile
     ```
 
-  - **릴리스** : 이미지에 태그를 지정하고 레지스트리에 푸시합니다.
+  - **릴리스** : 이미지에 태그를 지정하고 레지스트리에 푸시한다.
 
     ```
     docker tag <image_id> <image_registry>/<image_id>
     docker push <image_registry>/<image_id>
     ```
 
-  - **실행** : 레지스트리에서 이미지를 가져와 컨테이너 인스턴스로 실행합니다.
+  - **실행** : 레지스트리에서 이미지를 가져와 컨테이너 인스턴스로 실행한다.
 
     ```
     docker run --name <container_id> -it <image_id>
@@ -316,7 +316,7 @@ git push -u origin master
 -  상태 비저장으로 만들려면 모든 데이터를 애플리케이션 외부에 저장해야 한다..
 
 - Spring Boot 애플리케이션은 호스트 시스템 또는 Docker와 같은 컨테이너 런타임 환경 내부에서 Java 프로세스로 실행된다. 이 원칙은 프로세스가 무상태(stateless)이고 무공유(share-no)여야 한다.
--  지속해야 하는 모든 데이터는 데이터베이스와 같은 상태 기반 지원 서비스에 저장해야 합니다.
+-  지속해야 하는 모든 데이터는 데이터베이스와 같은 상태 기반 지원 서비스에 저장해야 한다.
 
 - 이것은 응용 프로그램 프로세스의 메모리에 사용자 세션 데이터를 캐시하고 동일한 세션의 향후 요청이 동일한 프로세스로 라우팅될 것으로 예상하는 웹 응용 프로그램에서 "고정 세션"을 사용하는 방법에서 전환된 것이다.
 
@@ -331,12 +331,12 @@ git push -u origin master
 - **포트 바인딩은 특정 포트에 자신을 바인딩하고 해당 포트에서 관심 있는 소비자의 모든 요청을 수신하는 응용 프로그램을 지칭한다.**
 -  포트는 환경 변수로 선언되어 실행 중에 제공된다.
 
-- 이 원칙에 따라 구축된 애플리케이션은 웹 서버에 의존하지 않습니다. 응용 프로그램은 완전히 독립적이며 독립 실행형으로 실행됩니다. 웹 서버는 라이브러리로 패키지되어 애플리케이션과 함께 번들로 제공한다.
+- 이 원칙에 따라 구축된 애플리케이션은 웹 서버에 의존하지 않는다. 응용 프로그램은 완전히 독립적이며 독립 실행형으로 실행됩니다. 웹 서버는 라이브러리로 패키지되어 애플리케이션과 함께 번들로 제공한다.
 
 - 포트 바인딩은 마이크로 서비스가 자율적이고 독립적이어야 하는 기본 요구 사항 중 하나이다.
 
 - Spring Boot는 애플리케이션에 Tomcat을 포함하고 포트에 바인딩하고 해당 포트로 들어오는 요청을 수신하여 HTTP를 서비스로 노출한다.
-  - `server.port`Configuration Properties 을 설정하여 포트를 구성할 수 있습니다.(기본값은 8080)
+  - `server.port`Configuration Properties 을 설정하여 포트를 구성할 수 있다.(기본값은 8080)
 
 ```
 java -jar application.jar
@@ -366,9 +366,9 @@ java -jar application.jar
 
 - 안정적인 상태가 되어 정상적으로 종료되는 데 오랜 시간이 걸리면 애플리케이션을 빠르게 확장, 배포 또는 복구할 수 없다. 애플리케이션의 로드가 증가하고 해당 로드를 처리하기 위해 더 많은 인스턴스를 가져와야 하는 경우 시작 지연은 애플리케이션이 시작되는 동안 요청 거부를 의미할 수 있다.
 
-- Spring Boot 애플리케이션은 일회용으로 만들기 위해 컨테이너 내부에서 실행되어야 합니다. 컨테이너는 임시적이며 언제든지 시작하거나 중지할 수 있습니다.
+- Spring Boot 애플리케이션은 일회용으로 만들기 위해 컨테이너 내부에서 실행되어야 한다. 컨테이너는 임시적이며 언제든지 시작하거나 중지할 수 있다.
 
-- 따라서 시작 시간을 최소화하고 컨테이너가 중지될 때 애플리케이션이 정상적으로 종료되도록 하는 것이 중요합니다. 종속 리소스의 지연 초기화와 [최적화된 컨테이너 이미지](https://reflectoring.io/spring-boot-docker/) 를 구축하여 시작 시간을 최소화 한다.
+- 따라서 시작 시간을 최소화하고 컨테이너가 중지될 때 애플리케이션이 정상적으로 종료되도록 하는 것이 중요한다. 종속 리소스의 지연 초기화와 [최적화된 컨테이너 이미지](https://reflectoring.io/spring-boot-docker/) 를 구축하여 시작 시간을 최소화 한다.
 
 
 
@@ -959,10 +959,10 @@ Cloud Native TrailMap
 
 ![image](./assets/spring_logo.png)
 
-- Spring은 무엇일까요? 스프링은 **자바 기반의 웹 어플리케이션을 만들 수 있는 프레임워크**입니다. spring.io 사이트에서 확인하면 **스프링 프레임워크는 현대 자바 기반의 엔터프라이즈 어플리케이션을 위한 프로그래밍 및 Configuration Model 제공한다**라고 언급하고 있다.
+- Spring은 무엇일까요? 스프링은 **자바 기반의 웹 어플리케이션을 만들 수 있는 프레임워크**이다. spring.io 사이트에서 확인하면 **스프링 프레임워크는 현대 자바 기반의 엔터프라이즈 어플리케이션을 위한 프로그래밍 및 Configuration Model 제공한다**라고 언급하고 있다.
 
 - Python을 이용한 Django, Ruby를 이용한 Ruby on Rails, Javascript를 이용한 Node.js 기반의 웹 서버 개발과 같이 Java 개발자들은 Spring을 사용하여 웹 서비스를 만들 수 있다.
-- Spring 은 수많은 국내 기업과 해외 기업에서 매우 많은 서비스를 만들 때 사용되고 있습니다. 자바 백엔드 개발자는 웹 애플리케이션을 개발할 때, 대부분 스프링을 사용한다고 있다.
+- Spring 은 수많은 국내 기업과 해외 기업에서 매우 많은 서비스를 만들 때 사용되고 있다. 자바 백엔드 개발자는 웹 애플리케이션을 개발할 때, 대부분 스프링을 사용한다고 있다.
 - 스프링의 구조는 아래와 같은 구조로 이루어져있다.
 
 ![](./assets/spring_architect.png)
@@ -975,7 +975,9 @@ Cloud Native TrailMap
 
 - Spring은 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크로서 엔터프라이즈급 애플리케이션을 개발하기 위한 모든 기능을 종합적으로 제공하는 경량화된 솔루션이다.
 
-- Spring은 경량 컨테이너로 자바 객체를 직접 Spring 안에서 관리합니다. 객체의 생성 및 소멸과 같은 생명 주기(Life cycle)을 관리하며, Spring 컨테이너에서 필요한 객체를 가져와 사용한다.
+- Spring은 경량 컨테이너로 자바 객체를 직접 Spring 안에서 관리한다.
+
+- 객체의 생성 및 소멸과 같은 생명 주기(Life cycle)을 관리하며, Spring 컨테이너에서 필요한 객체를 가져와 사용한다.
 
 - Spring의 가장 큰 특징인 IOC와 DI의 개념은 아래와 같다.
 
@@ -983,7 +985,7 @@ Cloud Native TrailMap
   제어의 역전 (IOC, Inversion Of Control)
     ```
 
-    - 일반적으로 처음에 배우는 자바 프로그램에서는 **각 객체들이 프로그램의 흐름을 결정하고 각 객체를 직접 생성하고 조작하는 작업(객체를 직접 생성하여 메소드 호출)을 했습니다**. 즉, 모든 작업을 사용자가 제어하는 구조이다. 예를 들어 A 객체에서 B 객체에 있는 메소드를 사용하고 싶으면, B 객체를 직접 A 객체 내에서 생성하고 메소드를 호출한다.
+    - 일반적으로 처음에 배우는 자바 프로그램에서는 **각 객체들이 프로그램의 흐름을 결정하고 각 객체를 직접 생성하고 조작하는 작업(객체를 직접 생성하여 메소드 호출)을 한다**. 즉, 모든 작업을 사용자가 제어하는 구조이다. 예를 들어 A 객체에서 B 객체에 있는 메소드를 사용하고 싶으면, B 객체를 직접 A 객체 내에서 생성하고 메소드를 호출한다.
   - 하지만 **IOC가 적용된 경우, 객체의 생성을 특별한 관리 위임 주체에게 맡긴다.** 이 경우 **사용자는 객체를 직접 생성하지 않고, 객체의 생명주기를 컨트롤하는 주체는 다른 주체**가 된다. 즉, 사용자의 제어권을 다른 주체에게 넘기는 것을 IOC(제어의 역전) 라고 한다.
     
   - 요약하면 Spring의 Ioc란 `클래스 내부의 객체 생성 -> 의존성 객체의 메소드 호출`이 아닌, `스프링에게 제어를 위임하여 스프링이 만든 객체를 주입 -> 의존성 객체의 메소드 호출` 구조이다. 스프링에서는 모든 의존성 객체를 스프링이 실행될때 만들어주고 필요한 곳에 주입해준다.
@@ -1014,9 +1016,10 @@ Cloud Native TrailMap
 
 ### 4.2.2 시스템 요구 사항
 
-스프링 부트 2.7.3에는 Java 8이 필요하며 [Java](https://www.java.com/) 18까지 호환됩니다. [Spring framework 5.3.22](https://docs.spring.io/spring-framework/docs/5.3.22/reference/html/) 이상도 필요합니다.
+- 스프링 부트 2.7.3에는 Java 8이 필요하며 [Java](https://www.java.com/) 18까지 호환된다.
+  - [Spring framework 5.3.22](https://docs.spring.io/spring-framework/docs/5.3.22/reference/html/) 이상 버전을 사용한다.
 
-명시적 빌드 지원은 다음 빌드 도구에 대해 제공됩니다.
+- 빌드 지원은 아래 빌드 도구를 지원한다.
 
 | 빌드 도구 | 버전                |
 | :-------- | :------------------ |
@@ -1025,7 +1028,7 @@ Cloud Native TrailMap
 
 ### 4.2.3  서블릿 컨테이너
 
-Spring Boot는 다음과 같은 임베디드 서블릿 컨테이너를 지원합니다.
+- Spring Boot는 다음과 같은 임베디드 서블릿 컨테이너를 지원한다.
 
 | 이름         | 서블릿 버전 |
 | :----------- | :---------- |
@@ -1116,7 +1119,7 @@ do something..
 - 일반 클래스에 **@Controller** 어노테이션을 사용하면 **요청을 매핑할 수 있는 컨트롤러 역할을 수행하는 클래스**가 된다.
 
 - 그 클래스에서는 **@GetMapping**과 **@PostMapping** 어노테이션을 사용해서 요청을 매핑할 수 있다.
-  - 서블릿을 Low level 로 개발하지 않고도, Spring Web MVC를 사용하면 이렇게 서블릿을 간편하게 개발할 수 있습니다. 그 이유는 뒷단에 spring이 제공해주는 여러 기능들이 숨겨져 있기 때문ㅣ다.
+  - 서블릿을 Low level 로 개발하지 않고도, Spring Web MVC를 사용하면 이렇게 서블릿을 간편하게 개발할 수 있다.
   - 즉, HttpServlet을 상속받고 **doGet(), doPost()**를 구현하는 등의 작업을 하지 않아도 된다.
 
 - **Service Abstraction(서비스 추상화)의 목적 중 하나가 이러한 편의성을 제공하는 것이다.**
@@ -1230,14 +1233,14 @@ public class Application {
 }
 ```
 
-- 즉, 우리는 프로젝트의 최상단에 Application.java를 위치시키고 @SpringBootApplication 설정해두면 앞으로 프로젝트에 추가할 configuration 관련 정보들이 모두 유효하도록 설정됩니다.
+- 즉, 우리는 프로젝트의 최상단에 Application.java를 위치시키고 @SpringBootApplication 설정해두면 앞으로 프로젝트에 추가할 configuration 관련 정보들이 모두 유효하도록 설정이 된다.
 
   
 
 #### 4.2.5.2 @EnableAutoConfiguration
 
 - @EnableAutoConfiguration은 auto configuration 기능을 사용하겠다는 설정이다. 
-- @EnableAutoConfiguration을 설정하지 않는다면 auto configuration 을 사용하지 못하게 됩니다. 일반적으로 아래와 같이 @ComponentScan과 함께 사용된다.
+- @EnableAutoConfiguration을 설정하지 않는다면 auto configuration 을 사용하지 못하게 된다. 일반적으로 아래와 같이 @ComponentScan과 함께 사용된다.
 
 ```
 package com.dveamer.sample
@@ -1263,7 +1266,7 @@ public class Application {
 
 - Spring Boot가 미리 정의해둔 AutoConfiguration 정보는 `spring-boot-autoconfigure/META-INF/spring.factories`에서 혹은 [spring.factories](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories)에서 확인 가능하다.
 
-`org.springframework.boot.autoconfigure.EnableAutoConfiguration`에 상당히 많은 AutoConfigruation이 등록되어있는 것을 확인할 수 있습니다.
+`org.springframework.boot.autoconfigure.EnableAutoConfiguration`에 상당히 많은 AutoConfigruation이 등록되어있는 것을 확인할 수 있다.
 
 ```
 ...
@@ -1287,7 +1290,7 @@ org.springframework.boot.autoconfigure.data.cassandra.CassandraReactiveDataAutoC
 ...
 ```
 
-- 각 AutoConfigruation들은 필요한 상황에만 자신이 실행될 수 있도록 @Conditional, @Condition과 같은 annotation들로 설정이 되어있습니다. 그 annotation 을 기반으로 필터링이 먼저 이뤄지고 필터링되지 않은 AutoConfigruation을 가지고 작업이 진행된다.
+- 각 AutoConfigruation들은 필요한 상황에만 자신이 실행될 수 있도록 @Conditional, @Condition과 같은 annotation들로 설정이 되어있다. 그 annotation 을 기반으로 필터링이 먼저 이뤄지고 필터링되지 않은 AutoConfigruation을 가지고 작업이 진행된다.
 
 - @Condition, @Conditional 은 Sprig 4.0부터 추가된 annotation이고 Spring Boot auto configuration 과정에서 사용되는 또 다른 annotation들도 [autoconfigure-condition](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/)에서 확인 가능하다.
 
@@ -1313,7 +1316,7 @@ org.springframework.boot.autoconfigure.condition.OnWebApplicationCondition
 ...
 ```
 
-- 해당 필터들은 각 AutoConfiguration이 가진 @Conditional을 가지고 조건 만족여부를 체크 합니다. 그리고 조건이 맞지 않을 경우 해당 AutoConfiguration이 동작하지 않도록 제외 시키는 역할을 수행한다.
+- 해당 필터들은 각 AutoConfiguration이 가진 @Conditional을 가지고 조건 만족여부를 체크 한다. 그리고 조건이 맞지 않을 경우 해당 AutoConfiguration이 동작하지 않도록 제외 시키는 역할을 수행한다.
   - [org.springframework.boot.autoconfigure.condition.OnBeanCondition](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/condition/OnBeanCondition.java)
 
     특정 bean들의 존재유무에 대해서 다루는 필터이다.
@@ -1368,7 +1371,7 @@ public class TaskExecutionAutoConfiguration {
 
 - @Lazy가 걸려있기 때문에 Spring Boot 기동시에 생성되지 않고 ThreadPoolTaskExecutor가 필요한 상황에서 bean이 생성이 요청된다.
 -  Executor.class와 같은 class type인 bean이 이미 생성되지 않은 경우에 @ConditionalOnMissingBean 조건이 만족되고 bean생성이 진행된다. 
-- 즉, 우리가 아래와 같은 Executor bean을 생성하는 설정을 해뒀다면 우리가 설정한 bean이 생성되고 TaskExecutionAutoConfiguration 에 의해서는 bean생성이 이뤄지지 않습니다. 반대로 우리가 Executor bean 등록을 설정하지 않았더라도 필요한 상황이되면 해당 bean이 생성되게 된다.
+- 즉, 우리가 아래와 같은 Executor bean을 생성하는 설정을 해뒀다면 우리가 설정한 bean이 생성되고 TaskExecutionAutoConfiguration 에 의해서는 bean생성이 이뤄지지 않는다. 반대로 우리가 Executor bean 등록을 설정하지 않았더라도 필요한 상황이되면 해당 bean이 생성되게 된다.
 
 ```java
 CustomizedAsyncConfig.java
@@ -1398,7 +1401,7 @@ public class CustomizedAsyncConfig {
 - 작업을 위해 필수적으로 필요한 bean이 미리 생성되어있는지 체크할 때 사용할 수 있다.
 
 - 예를들어, JdbcTemplate를 생성하기 위해서는 DataSource가 필요한 경우  아래의 JdbcTemplate bean 생성 설정은 @ConditionalOnBean이 함께 사용되어 dataSource라고 정의된 bean이 존재할 때만 JdbcTemplate bean을 생성한다.
--  만약에 dataSource가 존재하지 않는다면 JdbcTemplate을 만들 수도 없을 뿐더러 만들 필요가 없기 때문에 auto configuration 과정에서 JdbcTemplate을 bean 생성을 진행하지 않습니다.
+-  만약에 dataSource가 존재하지 않는다면 JdbcTemplate을 만들 수도 없을 뿐더러 만들 필요가 없기 때문에 auto configuration 과정에서 JdbcTemplate을 bean 생성을 진행하지 않는다.
 
 ```java
     @Bean 
@@ -1408,14 +1411,14 @@ public class CustomizedAsyncConfig {
     }
 ```
 
-- 참고로, 실제 [JdbcTemplateAutoConfiguration.java](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JdbcTemplateAutoConfiguration.java)은 @ConditionalOnBean을 사용하지는 않습니다.
+- 참고로, 실제 [JdbcTemplateAutoConfiguration.java](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JdbcTemplateAutoConfiguration.java)은 @ConditionalOnBean을 사용하지는 않는다.
 
 
 
 #### 4.2.5.7 @ConditionalOnClass
 
 - [@ConditionalOnClass](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/condition/ConditionalOnClass.html)은 classpath에 특정 class가 존재할 때만 조건이 만족된다.
-- 작업을 위해 필수적으로 필요한 의존성이 등록되어 있는지 체크할 때 사용할 수 있습니다.
+- 작업을 위해 필수적으로 필요한 의존성이 등록되어 있는지 체크할 때 사용할 수 있다.
 
 - [H2ConsoleAutoConfiguration.java](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/h2/H2ConsoleAutoConfiguration.java)을 예로들어 좀 더 자세히 살펴보면 브라우저에서 접근 가능한 H2 DB 콘솔 화면을 자동으로 구성하는 내용이다.
 
@@ -1561,7 +1564,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 ![img](./assets/1657785410947.png)클라이언트와 애플리케이션의 통신 간 컨트롤러의 위치와 역할
 
-- 이때 `TotalRentalService`는 인터페이스를 제공하므로 포트이며, 위 코드에선 `rent()`가 포트가 됩니다. 컨트롤러는 클라이언트의 HTTP API 요청을 받아 `rent()`라는 인터페이스를 연결해주고 있으므로 어댑터이다. 
+- 이때 `TotalRentalService`는 인터페이스를 제공하므로 포트이며, 위 코드에선 `rent()`가 포트가 된다. 컨트롤러는 클라이언트의 HTTP API 요청을 받아 `rent()`라는 인터페이스를 연결해주고 있으므로 어댑터이다. 
 - 이렇게 외부에서 요청해야 동작하는 포트와 어댑터를 주요소(primary)라고 하며, 포트와 어댑터에 따라 주포트 혹은 주어댑터라고도 부른다.
 
 - `TotalRentalService`의 구현체는 내부적으로 `CustomerRepository`나 `RentalRepository`, `InventoryService` 인터페이스를 사용한다. 만약 `Repository`가 데이터의 영속을 위해 Redis를 사용한다면 아래 그림과 같이 표현할 수 있다.
@@ -1570,7 +1573,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 - `Repository`나 `Service`는 `TotalRentalService`가 사용할 인터페이스를 제공하고 있기 때문에 포트이다. 위 코드의 `rentalRepository.find()`나 `inventoryService.rent()`를 예로 들 수 있다.
 - Repository가 Redis와 프로토콜을 이용해 통신하고 있다면 `RedisRepository`와 같은 구현체가 있으며 이 구현체는 Repository라는 인터페이스를 따르면서 내부적으로 Redis 프로토콜과 연결해 주므로 어댑터이다.
-- 이렇듯 애플리케이션이 호출하면 동작하는 포트와 어댑터를 부요소(secondary)라고 합니다. 역시 부포트 또는 부어댑터라고 부를 수 있다.
+- 애플리케이션이 호출하면 동작하는 포트와 어댑터를 부요소(secondary)라고 한다. 역시 부포트 또는 부어댑터라고 부를 수 있다.
 
 - 아래는 포트와 어댑터 아키텍처를 따른 소프트웨어와 인터페이스, 기반 요소와의 관계를 표현한 그림이다. 
 
@@ -1578,18 +1581,19 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 - 앞서 설명드렸던 요소들이 모두 담겨 있는 위 그림을 통해 서로 간의 의존 관계를 파악할 수 있다. 
 - 포트
-  - 어댑터가 애플리케이션과는 겹치지 않고 포트와 겹쳐 있는 모습으로 미루어 보아 어댑터가 애플리케이션을 직접 참조하지 않고 포트에 의존하고 있다는 것을 알 수 있습니다. 여기서 포트는 변경이 잦은 어댑터와 애플리케이션의 결합도를 낮추는 역할을 한다. 
+  - 어댑터가 애플리케이션과는 겹치지 않고 포트와 겹쳐 있는 모습으로 미루어 보아 어댑터가 애플리케이션을 직접 참조하지 않고 포트에 의존하고 있다는 것을 알 수 있으며 포트는 변경이 잦은 어댑터와 애플리케이션의 결합도를 낮추는 역할을 한다. 
   - 애플리케이션은 핵심 로직에 가까우므로 결합도를 낮추는 것이 매우 중요하다. 
-  - 또한 애플리케이션은 도메인에 의존하지만 도메인은 애플리케이션과 어댑터에 전혀 의존하지 않습니다. 따라서 애플리케이션이나 어댑터가 변경되어도 핵심 로직인 도메인은 아무런 영향을 받지 않는다.
+  - 또한 애플리케이션은 도메인에 의존하지만 도메인은 애플리케이션과 어댑터에 전혀 의존하지 않는다. 따라서 애플리케이션이나 어댑터가 변경되어도 핵심 로직인 도메인은 아무런 영향을 받지 않는다.
 
 - 어댑터
   - 주요소 쪽의 HTTP와 RPC는 각각의 어댑터를 통해 애플리케이션을 이용한다. 
   - 그러나 각각의 어댑터는 결국 하나의 포트를 사용한다. 
-  - 만약 웹소켓이 필요하다면 웹소켓 어댑터를 새로 만들어서 추가하면 됩니다. 이렇게 새로운 어댑터를 추가하는 동안 포트가 애플리케이션과 도메인을 보호합니다. 반면에 부요소 쪽에는 애플리케이션이 이용하는 기반 요소들이 있다. 
+  - 만약 웹소켓이 필요하다면 웹소켓 어댑터를 새로 만들어서 추가하면 된다. 
+  - 새로운 어댑터를 추가하는 동안 포트가 애플리케이션과 도메인을 보호하며 부요소 쪽에는 애플리케이션이 이용하는 기반 요소들이 있다. 
   - 위 그림에서는 저장소로 MySQL을 사용하고 있는 것을 확인할 수 있다.
   - 앞서 주요소 쪽에서 본 것과 다르게 기반 요소의 포트와 어댑터는 일반적으로 1:1 관계이며 이것은 하나의 포트에 여러 어댑터가 있다거나 새로 추가될 일은 거의 없다는 의미이다. 
-  - 기존에 사용하던 어댑터가 교체될 가능성은 충분이 있으며 빠른 속도가 필요하다면 MySQL을 Redis로 교체할 필요성이 있을 경우 Redis의 어댑터를 포트의 인터페이스에 준해서 만들고, 교체하면 된다. 이때도 역시 포트가 애플리케이션과 도메인을 보호한다.
-
+- 기존에 사용하던 어댑터가 교체될 가능성은 충분이 있으며 빠른 속도가 필요하다면 MySQL을 Redis로 교체할 필요성이 있을 경우 Redis의 어댑터를 포트의 인터페이스에 준해서 만들고, 교체하면 된다. 이때도 역시 포트가 애플리케이션과 도메인을 보호한다.
+  
 - Spring
   -  Spring Data JPA를 쓸 때 보통 인터페이스는 만들지만 구현체는 만들지 않는다. 
   - Spring Data JPA가 구현체 즉 어댑터를 만들어 준다.
@@ -1653,10 +1657,10 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 - 이 구조는 포트와 어댑터 아키텍처에 반드시 필수 형태는 아니며 아키텍처 원칙에 맞다면 프로젝트 성격에 따라 달라질 수 있다.
 -  위 패키지 구조에서 `domain`엔 주로 업무 로직을 포함하는 클래스들이 들어선다. 
-- application`은 주로 유스케이스(usecases)가 작성된 클래스를 포함합니다. 이 계층엔 업무 로직이 거의 없고, `domain`의 여러 업무 로직을 조합하는 역할을 합니다. `interfaces`는 클라이언트와 약속한 통신 방식의 어댑터를 포함합니다. 이곳에 포함되는 어댑터는 주어댑터이며, 주로 MVC의 컨트롤러나 RPC 서비스 등입니다.`
-- infrastructure`는 기반 요소, 즉 다른 서비스를 사용하는 어댑터를 포함합니다. 이곳에 포함되는 어댑터는 부어댑터이다. 예를 들면 Kafka나 Redis, MySQL 또는 다른 서비스의 API를 사용하는 구현체가 포함되는 패키지이다.
-
-- 일반적인 레이어드 구조의 패키지를 포트앤아답터 구조의 패키지로 변환하는 예를 소개한다.
+- application`은 주로 유스케이스(usecases)가 작성된 클래스를 포함한다. 이 계층엔 업무 로직이 거의 없고, `domain`의 여러 업무 로직을 조합하는 역할을 한다. 
+- interfaces`는 클라이언트와 약속한 통신 방식의 어댑터를 포함한다. 이곳에 포함되는 어댑터는 주어댑터이며, 주로 MVC의 컨트롤러나 RPC 서비스 등이다.`
+- infrastructure`는 기반 요소, 즉 다른 서비스를 사용하는 어댑터를 포함한다. 이곳에 포함되는 어댑터는 부어댑터이다. 예를 들면 Kafka나 Redis, MySQL 또는 다른 서비스의 API를 사용하는 구현체가 포함되는 패키지이다.
+- 일반적인 레이어드 구조의 패키지를 포트앤아답터 구조의 패키지로 변환하는 예이다.
 
 ```markup
 └── com
@@ -1684,10 +1688,10 @@ public class TotalRentalServiceImpl implements TotalRentalService {
                 └── TotalRentalServiceImpl.java
 ```
 
-- `controller`의 `MembershipController`와 `StoreController`는 서로 전혀 참조하지 않을 것 같지만 같은 패키지에 들어 있습니다. 
-- `persistence`의 `ItemRepository`와 `UserRepository`도 서로 참조할 것 같지 않습니다. 
-- 패키지는 서로 연관이 있는 클래스를 한 데 모으고 응집도를 높이는 역할을 해야 합니다. 
-- 패키지 조직만 잘해도 응집도가 높은 패키지 구조([참고](https://en.wikipedia.org/wiki/Package_principles))를 작성할 수 있습니다. 
+- `controller`의 `MembershipController`와 `StoreController`는 서로 전혀 참조하지 않을 것 같지만 같은 패키지에 들어 있다. 
+- `persistence`의 `ItemRepository`와 `UserRepository`도 서로 참조하지 않는다. 
+- 패키지는 서로 연관이 있는 클래스를 한 데 모으고 응집도를 높이는 역할을 해야 한다. 
+- 패키지 조직만 잘해도 응집도가 높은 패키지 구조([참고](https://en.wikipedia.org/wiki/Package_principles))를 작성할 수 있다.
 - 이 패키지 구조를 포트와 어댑터 아키텍처를 따른 패키지 구조로 리팩터링한다면 다음과 같다.
 
 ```markup
@@ -1721,10 +1725,10 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 ```
 
 - `RegisterRequest`와 `RegisterResponse`는 아마도 `MembershipController`외에는 사용할 것 같지 않으므로 같은 패키지에 넣어둔다.
-- 이렇게 하면 `RegisterRequest`와 `RegisterResponse`의 접근 제어자를 패키지 수준으로 제한할 수 있습니다. 
+- 이렇게 하면 `RegisterRequest`와 `RegisterResponse`의 접근 제어자를 패키지 수준으로 제한할 수 있다.
 - 접근 제어자를 제한해 놓으면 두 클래스는 다른 패키지에서 전혀 관심 가질 필요가 없다는 의도를 명확히 표현할 수 있다.
-- 또 클래스가 격리되므로 불필요한 의존성을 막거나 불특정 다수에게 참조될 위험성을 미연에 방지할 수 있습니다. 
-- 패키지 구조를 바꿈으로써 우리는 응집도를 높이고 모듈화라는 패키지 본연의 기능을 극대화할 수 있습니다.
+- 또 클래스가 격리되므로 불필요한 의존성을 막거나 불특정 다수에게 참조될 위험성을 미연에 방지할 수 있다.
+- 패키지 구조를 바꿈으로써 우리는 응집도를 높이고 모듈화라는 패키지 본연의 기능을 극대화할 수 있다.
 
 
 
@@ -1745,7 +1749,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 }
 ```
 
-- 종종 어댑터인 컨트롤러의 매개변수가 그대로 애플리케이션이나 도메인 쪽으로 넘어오는 사례가 있습니다. 컨트롤러가 아래와 같이 호출하는 경우입니다.
+- 종종 어댑터인 컨트롤러의 매개변수가 그대로 애플리케이션이나 도메인 쪽으로 넘어오는 사례가 있다. 컨트롤러가 아래와 같이 호출하는 경우이다.
 
 ```java
 public class RentalController {
@@ -1767,9 +1771,9 @@ public class RentalController {
 -  여기에 RPC 서비스를 새로 붙여서 애플리케이션에 연동할 경우 아래와 같은 상황이 발생한다.
   -  RPC 서비스는 주로 [IDL](https://ko.wikipedia.org/wiki/인터페이스_정의_언어)을 사용하고 [DTO](https://ko.wikipedia.org/wiki/데이터_전송_객체)를 별도로 생성한다. 
   - 아마 `RentParam`을 사용하지 않을 테지만, 애플리케이션을 사용하기 위해 RPC 서비스에선 굳이 `RentParam`을 생성하여 매개변수로 사용해야 한다.
-  -  이때 HTTP 어댑터인 컨트롤러에서 요구 사항이 변경되어 `RentParam`을 변경해야 한다면, 애플리케이션뿐만 아니라 RPC 서비스까지 변경해야 한다..
-
-- 포트앤어댑터 아키텍처에선 어댑터가 애플리케이션을 일방적으로 알고 있기 때문에 어댑터가 애플리케이션에 맞춰야 합니다. 아래는 `RentParam`을 `RentalTarget`으로 변경하여 메서드를 호출하는 예제입니다.
+  -  이때 HTTP 어댑터인 컨트롤러에서 요구 사항이 변경되어 `RentParam`을 변경해야 한다면, 애플리케이션뿐만 아니라 RPC 서비스까지 변경해야 한다.
+- 포트앤어댑터 아키텍처에선 어댑터가 애플리케이션을 일방적으로 알고 있기 때문에 어댑터가 애플리케이션에 맞춰야 한다. 
+- 아래는 `RentParam`을 `RentalTarget`으로 변경하여 메서드를 호출하는 예제이다.
 
 ```java
 public class RentalController {
@@ -1785,7 +1789,7 @@ public class RentalController {
 }
 ```
 
-- 부포트와 어댑터 역시 크게 다르지 않습니다. 예제 코드의 다른 부분을 살펴보겠습니다.
+- 부포트와 어댑터 역시 크게 다르지 않다.
 
 ```java
 public class TotalRentalServiceImpl implements TotalRentalService {
@@ -1800,18 +1804,15 @@ public class TotalRentalServiceImpl implements TotalRentalService {
     public RentalHistory rent(RentalTarget target) {
         //...
  
-        Item rentedItem = inventoryService.rent(rental, borrower)
-                                          .orElseThrow(AlreadyRentedException::new);
+        Item rentedItem = inventoryService.rent(rental, borrower).orElseThrow(AlreadyRentedException::new);
         // ...
         return history;
     }
 }
 ```
 
-- `inventoryService`에 `HttpInventoryService`라는 어댑터를 주입했다고 가정해보자.
--  일반적으로 네트워크를 통해 하나의 서비스에서 다른 서비스를 호출하며 이때 주로 HTTP 인터페이스를 사용합니다. 
-- 그런데 처음 서비스를 연동할 때에는 API가 추가되거나 변경된다고만 생각할 뿐, 연동하는 서비스 자체가 바뀔 거라는 생각은 잘 하지 않습니다. 
-- 그래서 연동한 서비스의 DTO를 바로 반환하는 일이 종종 있습니다. 아래 코드를 보겠습니다.
+- `inventoryService`에 `HttpInventoryService`라는 어댑터를 주입했다고 가정할 경우 일반적으로 네트워크를 통해 하나의 서비스에서 다른 서비스를 호출하며 이때 주로 HTTP 인터페이스를 사용하게 된다. 
+- 그런데 처음 서비스를 연동할 때에는 API가 추가되거나 변경된다고만 생각할 뿐, 연동하는 서비스 자체가 바뀔 거라는 생각은 잘 하지 않기 때문에 연동한 서비스의 DTO를 바로 반환하는 방법이 일반적이다.
 
 ```java
 public class HttpInventoryService implements InventoryService {
@@ -1827,8 +1828,8 @@ public class HttpInventoryService implements InventoryService {
 ```
 
 - `HttpInventoryService`는 HTTP를 이용해 받아 온 JSON을 역직렬화하여 `StoredItem` 객체를 만든다. 
-- 예제와 같이 애플리케이션 계층에서 사용하는 `Item`이 아니라 외부 `InventoryService`에서 얻어 온 StoredItem을 반환하는 경우가 많으며InventoryService`를 고도화하여 향상된 `InventoryService`가 출시되었고, 모든 클라이언트에게 API를 변경할 것을 요구했습니다. 
-  - 만약 포트와 어댑터 아키텍처대로 설계했다면, 어댑터를 하나 더 생성하여 `HttpInventoryService`를 대체하면 되나 새로 생성한 어댑터에서는 더 이상 `StoredItem`을 사용할 수 없게되었다.
+- 예제와 같이 애플리케이션 계층에서 사용하는 `Item`이 아니라 외부 `InventoryService`에서 얻어 온 StoredItem을 반환하는 경우가 많으며InventoryService`를 고도화하여 향상된 `InventoryService`가 출시되었고, 모든 클라이언트에게 API를 변경해야 하는 상황이 발생 하게 된다.
+  - 만약 포트와 어댑터 아키텍처대로 설계했다면, 어댑터를 하나 더 생성하여 `HttpInventoryService`를 대체하면 되나 새로 생성한 어댑터에서는 더 이상 `StoredItem`을 사용할 수 없게 되었다.
   - 향상된 `InventoryService`에서 제공하는 JSON의 구조가 아래와 같이 변경되었기 때문이다.
   - 이렇게 되면 DTO를 변경해야 하고, 결국 애플리케이션 영역에 있는 `TotalRentalService`에도 영향을 준다. 
 
@@ -1858,9 +1859,10 @@ public class HttpInventoryService implements InventoryService {
 
 - 새로 추가된 어댑터는 여전히 JSON을 역직렬화하여 `Item` 객체를 만들 수 있고, 데이터를 애플리케이션에 제공할 수 있다.
 
-- 이해를 돕기 위해 단순한 예제를 사용하여 설명했습니다. 하지만 주고받는 데이터 형태에만 신경 써선 안된다. 
-- 가령 MyBatis를 쓰고 있다고 해서 Repository의 인터페이스를 `queryList()`와 같이 작성하면 이 인터페이스는 애플리케이션이 아니라 MyBatis에 의존하게 된다. 
-- 저장소를 Redis로 바꾸게 되면 `queryList()`는 어색한 인터페이스로 남으며 이 메서드를 `commandList()`로 바꿔야 할 것 같지만 그러기 위해선 애플리케이션이나 도메인 영역을 함께 변경해야하므로 인터페이스 자체를 어느 한쪽에 치우치게 설계하지 말고 도메인 관점에서 도메인이 필요로 하는 인터페이스를 설계해야 한다.
+  > **어플리케이션 개발 시 주고받는 데이터 형태에만 신경 써선 안된다. 예를들어 MyBatis를 쓰고 있다고 해서 Repository의 인터페이스를 `queryList()`와 같이 작성하면 이 인터페이스는 애플리케이션이 아니라 MyBatis에 의존하게 된다.** 
+
+  > **저장소를 Redis로 바꾸게 되면 `queryList()`는 어색한 인터페이스로 남으며 이 메서드를 `commandList()`로 바꿔야 할 것 같지만 그러기 위해선 애플리케이션이나 도메인 영역을 함께 변경해야하므로 인터페이스 자체를 어느 한쪽에 치우치게 설계하지 말고 도메인 관점에서 도메인이 필요로 하는 인터페이스를 설계해야 한다.**
+
 
 
 
@@ -1905,7 +1907,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 ```
 
 - 위 애플리케이션 서비스는 네 개의 포트를 이용하고 있다. 
-- 세 개의 Repository와 하나의 Service는 내부가 어떻게 구성되어 있는지 모릅니다. 저장소로 MySQL을 사용할 수도 있고 Redis를 사용할 수도 있으며 Service는 RPC를 이용할 수도, HTTP를 이용할 수도 있다.
+- 세 개의 Repository와 하나의 Service는 내부가 어떻게 구성되어 있는지 모른다고 가정하고 저장소로 MySQL을 사용할 수도 있고 Redis를 사용할 수도 있으며 Service는 RPC를 이용할 수도, HTTP를 이용할 수도 있다.
 - 포트앤아답터 아키텍처에서는 애플리케이션 서비스를 실행하는 데에는 아무런 문제가 발생하지 않는다.
 - 아래는 Seudo 코드로 테스트 코드를 작성한 것이다.
 
@@ -1917,7 +1919,7 @@ fun `rent should return a history`() {
     val item = Item()
     var saved: RentalHistory
  
-    // 모의 어댑터를 준비합니다.
+    // 모의 어댑터를 준비한다.
     val customerRepository = CustomerRepository {
         override fun find(id) = customer
     }
@@ -1936,10 +1938,10 @@ fun `rent should return a history`() {
     // 테스트할 객체를 준비하고
     val service: TotalRentalService = TotalRentalServiceImpl(customerRepository, rentalRepository, inventoryService, rentalHistoryRepository)
  
-    // 테스트할 대상을 실행합니다.
+    // 테스트할 대상을 실행한다.
     val result = service.rent(RentalTarget("CUSTOMER_ID", "RENTAL_ID"))
  
-    // 결과를 검증합니다.
+    // 결과를 검증한다.
     assertNotNull(result)
     assertNotNull(saved)
     assertSame(result, saved)
@@ -1956,7 +1958,7 @@ fun `rent should return a history`() {
 
 - 모의 테스트 프레임워크를 사용하면 결합도 높은 클래스라도 쉽게 모의 객체를 만들어 주긴 하지만 클래스의 결합도가 높다면 단위 테스트를 할 때 'MySQL 쿼리에 오류가 있으면 어떡하지?'와 같은 고민을 하게 된다. 그런 일이 늘어나면 결국 단위 테스트는 통합 테스트가 되며  포트앤어댑터 아키텍처로 설계하면 이런 고민을 하지 않아도 된다.
 
-  > **업무 로직은 포트만 알면 됩니다.**
+  > **업무 로직은 포트만 알면 된다.**
 
 
 
@@ -1994,7 +1996,7 @@ Spring Cloud는 일반적인 사용 사례에 대한 우수한 즉시 사용 가
 
 - 기존 Spring Boot 앱인 경우 해당 앱에 Spring Cloud를 추가하려는 경우 첫 번째 단계는 사용해야 하는 Spring Cloud 버전을 지정해야 한다.
 
-- 어플리케이션에서 사용하는 버전은 사용 중인 Spring Boot 버전에 따라 다릅니다.
+- 어플리케이션에서 사용하는 버전은 사용 중인 Spring Boot 버전에 따라 다르다.
 
 | Release Train                                                | Boot Version                          |
 | :----------------------------------------------------------- | :------------------------------------ |
@@ -2967,7 +2969,7 @@ eureka:
     fetchRegistry: false
 ```
 
-- **여기에서 애플리케이션 포트를 구성하고 있습니다. \*Eureka\* 서버 의 기본값 은 \*8761\* 이다.** 
+- **애플리케이션 포트를 구성하고 있다. \*Eureka\* 서버 의 기본값 은 \*8761\* 이다.** 
 
 
 
@@ -3037,9 +3039,9 @@ eureka:
     preferIpAddress: true
 ```
 
-- 이러한 종류의 서비스는 나중에 쉽게 확장할 수 있어야 하기 때문에 이러한 방식으로 Eureka 클라이언트를 설정하기로 결정했습니다.
+- Eureka 클라이언트를 설정할 경우 서비스는 나중에 쉽게 확장할 수 있다.
 
-- 이제 클라이언트를 실행하고 브라우저를 다시 [*http://localhost:8761*](https://localhost:8761/) 로 지정하여 Eureka 대시보드에서 등록 상태를 확인합니다. 
+- 클라이언트를 실행하고 브라우저를 다시 [*http://localhost:8761*](https://localhost:8761/) 로 지정하여 Eureka 대시보드에서 등록 상태를 확인할 수 있다.
 
 ![스크린샷_20160819_101810](https://www.baeldung.com/wp-content/uploads/2016/08/Screenshot_20160819_101810.png)
 
@@ -3053,7 +3055,7 @@ eureka:
 
 - [Spring Cloud 는 ](https://www.baeldung.com/spring-cloud-series)[Spring MVC 주석](https://www.baeldung.com/spring-mvc-annotations) 에 대한 지원을 추가 하고 Spring Web에서 사용되는 것과 동일한 [*HttpMessageConverters 를 사용한다.*](https://www.baeldung.com/spring-httpmessageconverter-rest)
 
-- Feign 사용의 한 가지 좋은 점은 인터페이스 정의 외에 서비스를 호출하기 위한 코드를 작성할 필요가 없다는 것이다.
+- Feign 사용의 한 가지 좋은 점은 인터페이스 정의 외에 서비스를 호출하기 위한 코드를 작성할 필요가 없다..
 
 ### **4.6.2 종속성 구성**
 
@@ -3109,9 +3111,9 @@ public interface JSONPlaceHolderClient {
 
 - **각 Feign 클라이언트가 사용자 지정 가능한 구성 요소 집합으로 구성되어 있음을 이해하는 것이 매우 중요하다.**
 
-- Spring Cloud 는 다음 섹션에서 설명하는 대로 사용자 정의할 수 있는 *FeignClientsConfiguration 클래스를 사용하여 각 명명된 클라이언트에 대해 요청 시 새로운 기본 세트를 생성합니다.*
+- Spring Cloud 는 다음 섹션에서 설명하는 대로 사용자 정의할 수 있는 *FeignClientsConfiguration 클래스를 사용하여 각 명명된 클라이언트에 대해 요청 시 새로운 기본 세트를 생성한다.*
 
-- 위의 클래스에는 다음 빈이 포함되어 있습니다.
+- 위의 클래스에는 다음 빈이 포함되어 있다.
   - Decoder – *ResponseEntityDecoder ,* *SpringDecoder* 를 래핑 하여 *Response* 를 디코딩하는 데 사용된다.
   - Encoder– *SpringEncoder 는* *RequestBody* 를 인코딩하는 데 사용된다.
   - Logger– *Slf4jLogger* 는 Feign에서 사용하는 기본 Logger이다.
@@ -3155,7 +3157,7 @@ public class MyClientConfiguration {
 </dependency>
 ```
 
-- 최신 버전의 [*feign-okhttp*](https://search.maven.org/search?q=g:io.github.openfeign AND a:feign-okhttp) 및 [*feign-httpclient*](https://search.maven.org/search?q=g:io.github.openfeign AND a:feign-httpclient) 는 Maven Central에서 찾을 수 있습니다.
+
 
 ### 4.6.6 속성을 사용한 구성
 
@@ -3240,9 +3242,9 @@ public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
 
 - Fallback 패턴을 사용하면 원격 서비스 호출이 실패할 때 예외를 생성하는 대신 서비스 소비자가 대체 코드 경로를 실행하여 다른 수단을 통해 작업을 수행하려고 한다.
 
-- 목표를 달성하려면 속성 파일에 *feign.circuitbreaker.enabled=true 를 추가하여 resilience4j를 활성화해야 합니다.*
+- 목표를 달성하려면 속성 파일에 *feign.circuitbreaker.enabled=true 를 추가하여 resilience4j를 활성화해야 한다*
 
-- 이를 통해 서비스가 실패할 때 호출되는 Fallback 메서드를 구현할 수 있습니다.
+- 이를 통해 서비스가 실패할 때 호출되는 Fallback 메서드를 구현할 수 있다.
 
 ```java
 @Component
@@ -3287,9 +3289,9 @@ logging.level.com.baeldung.cloud.openfeign.client: DEBUG
 logging.level.com.baeldung.cloud.openfeign.client.JSONPlaceHolderClient: DEBUG
 ```
 
-- **Feign 로깅은 \*DEBUG\* 수준에만 응답합니다.**
+- **Feign 로깅은 \*DEBUG\* 수준에만 응답한다.**
 
-- 클라이언트별로 구성할 수 있는 *Logger.Level 은 로깅할 양을 나타냅니다.*
+- 클라이언트별로 구성할 수 있는 *Logger.Level 을 통해 로깅의 정보를 설정할 수 있다.
 
 ```java
 @Configuration
@@ -3331,7 +3333,7 @@ public class CustomErrorDecoder implements ErrorDecoder {
 }
 ```
 
-- *@Configuration* 클래스 에 빈을 추가하여 기본 *ErrorDecoder 를 교체해야 합니다.*
+- *@Configuration* 클래스 에 빈을 추가하여 기본 *ErrorDecoder 를 교체해야 한다.*
 
 ```java
 @Configuration
@@ -3370,7 +3372,7 @@ public class ClientConfiguration {
 </dependency> 
 ```
 
-- 이 예에서는 H2 데이터베이스를 사용하고 있습니다. 앞서 언급했듯이 Spring Data JDBC는 스키마 생성을 제공하지 않는다.
+- 이 예에서는 H2 데이터베이스를 사용하고 있다. 앞서 언급했듯이 Spring Data JDBC는 스키마 생성을 제공하지 않는다.
   -  이러한 경우 스키마 개체를 만들기 위한 SQL DDL 명령이 있는 사용자 지정 *schema.sql 파일을 만들 수 있다.
 - 자동으로 Spring Boot는 이 파일을 선택하여 데이터베이스 객체를 생성하는 데 사용한다.
 
@@ -3394,7 +3396,7 @@ public class Person {
 }
 ```
 
-- *Person* 클래스 에서 *@Table* 또는 *@Column* 주석을 사용할 필요가 없습니다 . Spring Data JDBC의 기본 명명 전략은 엔터티와 테이블 간의 모든 매핑을 암시적으로 수행합니다.
+- *Person* 클래스 에서 *@Table* 또는 *@Column* 주석을 사용할 필요가 없습니다 . Spring Data JDBC의 기본 명명 전략은 엔터티와 테이블 간의 모든 매핑을 암시적으로 수행한다.
 
 ### 4.7.4 JDBC 저장소 선언
 
@@ -3430,14 +3432,14 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 }
 ```
 
-- 버전 2.0부터 Spring Data JDBC는 [쿼리 메소드](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.query-methods) 를 지원한다. 즉, 예를 들어 *findByFirstName과* 같은 키워드를 포함하는 쿼리 메서드의 이름을 지정하면 Spring Data JDBC는 쿼리 객체를 자동으로 생성합니다.
+- 버전 2.0부터 Spring Data JDBC는 [쿼리 메소드](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.query-methods) 를 지원한다. 즉, 예를 들어 *findByFirstName과* 같은 키워드를 포함하는 쿼리 메서드의 이름을 지정하면 Spring Data JDBC는 쿼리 객체를 자동으로 생성한다.
 
-- 수정 쿼리의 경우 *@Modifying* 주석을 사용하여 엔터티를 수정하는 쿼리 메서드에 주석을 추가합니다. *또한 @Query* 주석 으로 장식합니다 .
+- 수정 쿼리의 경우 *@Modifying* 주석을 사용하여 엔터티를 수정하는 쿼리 메서드에 주석을 추가한다. *또한 @Query* 주석 으로 장식합니다 .
 
-- *@Query* 주석 내부에 SQL 명령을 추가합니다. **Spring Data JDBC에서는 일반 SQL로 쿼리를 작성합니다.** 
--  JPQL과 같은 고급 쿼리 언어를 사용하지 않습니다. 결과적으로 응용 프로그램은 데이터베이스 공급업체와 긴밀하게 연결되며 다른 데이터베이스로 변경하는 것도 더 어려워집니다.
+- *@Query* 주석 내부에 SQL 명령을 추가한다. **Spring Data JDBC에서는 일반 SQL로 쿼리를 작성한다.** 
+-  JPQL과 같은 고급 쿼리 언어를 사용하지 않는다. 결과적으로 응용 프로그램은 데이터베이스 공급업체와 긴밀하게 연결되며 다른 데이터베이스로 변경하는 것도 더 어려워집니다.
 
--  **Spring Data JDBC가 인덱스 번호가 있는 매개변수 참조를 지원하지 않는다는 것입니다** . **매개변수는 이름으로만 참조할 수** 있습니다.
+-  **Spring Data JDBC가 인덱스 번호가 있는 매개변수 참조를 지원하지 않는다는 것입니다** . **매개변수는 이름으로만 참조할 수** 있다.
 
 
 
@@ -3513,18 +3515,18 @@ public String getAddress(Customer customer) {...}
 public String getAddress(Customer customer) {...}
 ```
 
-- 여기서 비울 캐시와 함께 *allEntries 추가 매개변수를 사용합니다.* 이렇게 하면 캐시 *주소* 의 모든 항목이 지워지고 새 데이터를 위해 준비됩니다.
+- 여기서 비울 캐시와 함께 *allEntries 추가 매개변수를 사용한다.* 이렇게 하면 캐시 *주소* 의 모든 항목이 지워지고 새 데이터를 위해 준비됩니다.
 
 #### 4.8.4.3 @CachePut
 
-- *@CacheEvict* 가 오래되고 사용되지 않는 항목을 제거하여 대용량 캐시에서 항목을 조회하는 오버헤드를 줄이는 동안 캐시에서 너무 많은 데이터를 제거하는 것을 방지할 필요성이 있을 경우 *@CachePut* 주석을 사용 하면 메서드 실행을 방해하지 않고 캐시 내용을 업데이트할 수 있습니다.
+- *@CacheEvict* 가 오래되고 사용되지 않는 항목을 제거하여 대용량 캐시에서 항목을 조회하는 오버헤드를 줄이는 동안 캐시에서 너무 많은 데이터를 제거하는 것을 방지할 필요성이 있을 경우 *@CachePut* 주석을 사용 하면 메서드 실행을 방해하지 않고 캐시 내용을 업데이트할 수 있다.
 
 ```java
 @CachePut(value="addresses")
 public String getAddress(Customer customer) {...}
 ```
 
-- *@Cacheable* 과 *@CachePut* 의 차이점은 @Cacheable은 *메서드* 실행 을 **건너뛰지** 만 *@CachePut* 은 **실제로 메서드** 를 실행한 다음 그 결과를 캐시에 저장한다는 것입니다.
+- *@Cacheable* 과 *@CachePut* 의 차이점은 @Cacheable은 *메서드* 실행 을 **건너뛰지** 만 *@CachePut* 은 **실제로 메서드** 를 실행한 다음 그 결과를 캐시에 저장한다는 것이다.
 
 #### 4.8.4.4 @Caching
 
@@ -3568,7 +3570,7 @@ public String getAddress(Customer customer) {...}
 
 - 조건 매개변수
 
-주석이 활성화될 때 더 많은 제어를 원하면 SpEL 표현식을 사용하고 해당 표현식 평가를 기반으로 결과가 캐시되도록 하는 조건 매개 변수로 *@CachePut 을 매개변수화할 수 있습니다.*
+주석이 활성화될 때 더 많은 제어를 원하면 SpEL 표현식을 사용하고 해당 표현식 평가를 기반으로 결과가 캐시되도록 하는 조건 매개 변수로 *@CachePut 을 매개변수화할 수 있다.*
 
 ```java
 @CachePut(value="addresses", condition="#customer.name=='Tom'")
@@ -3662,10 +3664,10 @@ public void sendMessage(String msg) {
 }
 ```
 
-- send API는 ListenableFuture 객체 를 반환합니다. 보내는 스레드를 차단하고 보낸 메시지에 대한 결과를 얻으려면 *ListenableFuture* 객체 의 *get* API를 호출할 수 있습니다. 스레드는 결과를 기다리지만 Producer 속도가 느려진다.
-  - Kafka는 빠른 스트림 처리 플랫폼입니다. 따라서 후속 메시지가 이전 메시지의 결과를 기다리지 않도록 결과를 비동기적으로 처리하는 것이 좋다.
+- send API는 ListenableFuture 객체 를 반환한다. 보내는 스레드를 차단하고 보낸 메시지에 대한 결과를 얻으려면 *ListenableFuture* 객체 의 *get* API를 호출할 수 있다. 스레드는 결과를 기다리지만 Producer 속도가 느려진다.
+  - Kafka는 빠른 스트림 처리 플랫폼이다. 따라서 후속 메시지가 이전 메시지의 결과를 기다리지 않도록 결과를 비동기적으로 처리하는 것이 좋다.
 
-- 이 같은 경우 콜백을 통해 작업을 수행할 수 있습니다.
+- 이 같은 경우 콜백을 통해 작업을 수행할 수 있다.
 
 ```java
 public void sendMessage(String message) {
@@ -3689,9 +3691,9 @@ public void sendMessage(String message) {
 }
 ```
 
-### 4.9.5 메시지 소비
+### 4.9.5 이벤트 수신
 
-- @KafkaListener 어노테이션을 통해 원하는 topic에 대한 이베느를 받을 수 있다.
+- @KafkaListener 어노테이션을 통해 원하는 topic에 대한 메시지를 수신 받을 수 있다.
 
 ```java
 @KafkaListener(topics = "topicName", groupId = "foo")
@@ -3700,7 +3702,7 @@ public void listenGroupFoo(String message) {
 }
 ```
 
-- Topic 에 대해 각각 다른 Group ID를 가진 여러 리스너를 구현할 수 있다. 또한 한 Consumer는 다양한 Topic 메시지를 소비할 수 있다.
+- Topic 에 대해 각각 다른 Group ID를 가진 여러 리스너를 구현할 수 있다. 또한 한 Consumer는 다양한 Topic 메시지를 수신 할 수 있다.
 
 ```java
 @KafkaListener(topics = "topic1, topic2", groupId = "foo")
@@ -3750,7 +3752,7 @@ public void listenToPartition(
 
 ### 4.9.7 리스너에 대한 메시지 필터 추가
 
-- 사용자 지정 필터를 추가하여 특정 메시지 콘텐츠를 사용하도록 수신기를 구성할 수 있습니다. 이것은 *[RecordFilterStrategy](https://docs.spring.io/spring-kafka/api/org/springframework/kafka/listener/adapter/RecordFilterStrategy.html)* 를 *KafkaListenerContainerFactory* 로 설정하여 수행할 수 있다 .
+- 사용자 지정 필터를 추가하여 특정 메시지 콘텐츠를 사용하도록 수신기를 구성할 수 있다. 이것은 *[RecordFilterStrategy](https://docs.spring.io/spring-kafka/api/org/springframework/kafka/listener/adapter/RecordFilterStrategy.html)* 를 *KafkaListenerContainerFactory* 로 설정하여 수행할 수 있다 .
 
 ```java
 @Bean
@@ -3846,7 +3848,7 @@ public ConcurrentKafkaListenerContainerFactory<String, Greeting>
 }
 ```
 
-- spring-kafka JSON 직렬 변환기 및 역직렬 변환기는 spring-kafka 프로젝트에 대한 선택적 Maven 종속성이기도 한 Jackson 라이브러리를 사용합니다.
+- spring-kafka JSON 직렬 변환기 및 역직렬 변환기는 spring-kafka 프로젝트에 대한 선택적 Maven 종속성이기도 한 Jackson 라이브러리를 사용한다.
   - *pom.xml* 
 
 ```java
@@ -3857,9 +3859,7 @@ public ConcurrentKafkaListenerContainerFactory<String, Greeting>
 </dependency>
 ```
 
-- 최신 버전의 Jackson을 사용하는 대신 spring-kafka 의 *pom.xml* 에 추가된 버전을 사용하는 것이 좋습니다 .
-
-- Greeting 메시지 를 사용하는 리스너를 작성해야 합니다.
+- Greeting 메시지 를 사용하는 리스너를 작성해야 한다.
 
 ```java
 @KafkaListener(
@@ -3879,17 +3879,17 @@ public void greetingListener(Greeting greeting) {
 - 마이크로서비스로 큰 서비스를 잘게 쪼개어 개발하게 되면 자연스럽게 마이크로서비스간에 연결이 많아지고 복잡하게 된다.
 
 - Sleuth는 분산된 마이크로서비스간에 트래픽의 흐름을 추적(Tracing)할 수 있도록 Trace기록을 로그에 자동 삽입해 준다.
-- Sleuth와 Zipkin이 필요한 이유는 **분산된 마이크로서비스간의 트래픽을 추적하여 문제를 사전에 방지하거나 해결하기 위해**서입니다.
+- Sleuth와 Zipkin이 필요한 이유는 **분산된 마이크로서비스간의 트래픽을 추적하여 문제를 사전에 방지하거나 해결하기 위해**서이다.
 
 ### 4.10.2 동작원리
 
 - Sleuth를 적용한 후 Log4j, Logback, SLF4J(Simple Logging Facade for Java)등을 사용하여 로깅하면,  자동으로 로그에 Service명, Trace ID, Span ID가 삽입됩니다.
 
-- Sleuth에 의해 로그에 자동으로 Trace정보가 주입된 예제입니다.
+- Sleuth에 의해 로그에 자동으로 Trace정보가 주입된 예제이다.
 
-- service명이 hystrix-consumer이고 Trace ID가 7d84c8618a10307f이며 Span ID는 e25a40b90acb4e5b입니다.
+- service명이 hystrix-consumer이고 Trace ID가 7d84c8618a10307f이며 Span ID는 e25a40b90acb4e5b이다.
 
-- Span ID는 각 트래픽의 고유 ID입니다.
+- Span ID는 각 트래픽의 고유 ID이다.
 
 ```
 2021-02-02 11:58:58.969  INFO [hystrix-consumer,7d84c8618a10307f,e25a40b90acb4e5b,true] 1 --- [nio-8003-exec-7] com.springcloud.CafeController           : ### Received: /delay/pass
@@ -3907,18 +3907,18 @@ public void greetingListener(Greeting greeting) {
 | 주문접수                  | 조리요청                  | /restaurant/{order id}           | 1000     | 1300    |
 | 조리요청                  | 배달요청                  | /deliver/{order id}              | 1000     | 1400    |
 
-그림으로 표현하면 아래와 같습니다.
+그림으로 표현하면 아래와 같다.
 
 ![img](./assets/trace.png)
 
 
 
-- 또한, 이러한 Tracing정보에는 4가지 종류의 timestamp가 있어 소요된 시간까지 측정할 수 있습니다.
+- 또한, 이러한 Tracing정보에는 4가지 종류의 timestamp가 있어 소요된 시간까지 측정할 수 있다.
   - CS(Client Start) -> SR(Server Received) => SS(Server Sent) => CR(Client Received)
 
-- 이러한 Trace정보를 Zipkin과 같은 분산 트랜잭션 추적 시스템으로 송부하면 그래픽하게 트래픽의 흐름을 볼 수 있습니다.
+- 이러한 Trace정보를 Zipkin과 같은 분산 트랜잭션 추적 시스템으로 송부하면 그래픽하게 트래픽의 흐름을 볼 수 있다.
 
-- Trace정보를 Zipkin에 송부하기 위해서는 Zipkin client를 적용해야 합니다.
+- Trace정보를 Zipkin에 송부하기 위해서는 Zipkin client를 적용해야 한다.
 
 
 
@@ -3976,7 +3976,7 @@ spring:
     base-url: http://localhost:9411
 ```
 
-- probability는 트래픽의 몇%를 zipkin으로 보낼것인지를 정의합니다. 0.5면 50%만 보내는 설정이다.
+- probability는 트래픽의 몇%를 zipkin으로 보낼것인지를 정의한다. 0.5면 50%만 보내는 설정이다.
 - zipkin.base-url은 zipkin service의 서비스명과 포트이다. 
 
 
@@ -4257,11 +4257,11 @@ https://github.com/kirobo77/config.git
 
 - Apater, Port, Domain 영역으로 패키지를 분리해 본다.
 
-### 5.10.2 성능을 고려하여 서비스를 개선해 보세요.
+### 5.10.2 성능을 고려하여 서비스를 개선
 
 - Kafka 및 Redis cache를 활용하여 API에 대한 성능을 개선해 본다.
 
-### 5.10.3 JUNIT을 활용한 테스트코드를 작성해 보세요.
+### 5.10.3 JUNIT을 활용한 테스트코드를 작성
 
 - junit에서는 아래와 같이 단위/통합테스트 할 수 있는 다양한 기능을 제공한다.
 
@@ -4329,7 +4329,7 @@ public class MockBeanAnnotationIntegrationTest {
 }
   ```
 
-### 5.10.4 컨테이너 환경에서 서비스를 실행해 보세요.
+### 5.10.4 컨테이너 환경에서 서비스를 실행
 
 #### 5.10.4.1 JIB
 
