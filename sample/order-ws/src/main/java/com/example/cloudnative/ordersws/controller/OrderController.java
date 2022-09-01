@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/order-ms")
-public class OrdersController {
+public class OrderController {
     @Autowired
     private Environment env;
 
@@ -63,14 +63,19 @@ public class OrdersController {
     }
 
     @GetMapping(value="/users/{userId}/orders")
-    public ResponseEntity<List<OrderResponseModel>> getOrders(@PathVariable("userId") String userId) {
+    public ResponseEntity<List<OrderResponseModel>> getOrders(@PathVariable("userId") String userId) throws Exception {
     	log.info("get orders");
+    	
+    	
         Iterable<OrderEntity> orderList = ordersService.getOrdersByUserId(userId);
 
         List<OrderResponseModel> result = new ArrayList<>();
         orderList.forEach(v -> {
             result.add(new ModelMapper().map(v, OrderResponseModel.class));
         });
+        
+        //circuit breaker 테스트
+        //throw new Exception();
 
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }

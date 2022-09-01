@@ -21,19 +21,19 @@ import com.example.cloudnative.usersws.entity.UserEntity;
 import com.example.cloudnative.usersws.model.CreateUserRequestModel;
 import com.example.cloudnative.usersws.model.CreateUserResponseModel;
 import com.example.cloudnative.usersws.model.UserResponseModel;
-import com.example.cloudnative.usersws.service.UsersService;
+import com.example.cloudnative.usersws.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
 @RequestMapping("/user-ms")
-public class UsersController {
+public class UserController {
     @Autowired
     private Environment env;
 
     @Autowired
-    UsersService usersService;
+    UserService userService;
 
     @GetMapping("/")
     public String health() {
@@ -47,7 +47,7 @@ public class UsersController {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
         UserDto userDto = modelMapper.map(userDetails, UserDto.class);
-        UserDto createDto = usersService.createUser(userDto);
+        UserDto createDto = userService.createUser(userDto);
 
         CreateUserResponseModel returnValue = modelMapper.map(createDto, CreateUserResponseModel.class);
 
@@ -56,7 +56,7 @@ public class UsersController {
 
     @GetMapping(value="/users")
     public ResponseEntity<List<UserResponseModel>> getUsers() {
-        Iterable<UserEntity> userList = usersService.getUserByAll();
+        Iterable<UserEntity> userList = userService.getUserByAll();
         log.info("get users");
         List<UserResponseModel> result = new ArrayList<>();
         userList.forEach(v -> {
@@ -69,7 +69,7 @@ public class UsersController {
     @GetMapping(value="/users/{userId}")
     public ResponseEntity<UserResponseModel> getUser(@PathVariable("userId") String userId) {
     	log.info("get user");
-        UserDto userDto = usersService.getUserByUserId(userId);
+        UserDto userDto = userService.getUserByUserId(userId);
         UserResponseModel returnValue = new ModelMapper().map(userDto, UserResponseModel.class);
 
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);

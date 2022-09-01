@@ -14,8 +14,9 @@ import com.example.cloudnative.usersws.model.OrderResponseModel;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 
-@FeignClient(url="http://localhost:50002", name="orders-app-service", fallbackFactory = OrdersFallbackFactory.class)
-public interface OrdersServiceClient {
+//@FeignClient(url="http://localhost:50002", name="orders-app-service", fallbackFactory = OrdersFallbackFactory.class)
+@FeignClient(name="order-ws", fallbackFactory = OrdersFallbackFactory.class)
+public interface OrderServiceClient {
 
     @GetMapping("/order-ms/users/{id}/orders")
     List<OrderResponseModel> getOrders(@PathVariable String id);
@@ -23,15 +24,15 @@ public interface OrdersServiceClient {
 }
 
 @Component
-class OrdersFallbackFactory implements FallbackFactory<OrdersServiceClient> {
+class OrdersFallbackFactory implements FallbackFactory<OrderServiceClient> {
     @Override
-    public OrdersServiceClient create(Throwable cause) {
+    public OrderServiceClient create(Throwable cause) {
         return new OrdersServiceClientFallback(cause);
     }
 }
 
 @Slf4j
-class OrdersServiceClientFallback implements OrdersServiceClient {
+class OrdersServiceClientFallback implements OrderServiceClient {
     private final Throwable cause;
 
     public OrdersServiceClientFallback(Throwable cause) {

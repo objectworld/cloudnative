@@ -21,14 +21,17 @@ public class DemoRouteLocator {
 				
 				
 				.route("lb_route1", r -> r.path("/order-ms/**")
+						.filters(f -> f.circuitBreaker(c -> c.setName("testcirguitbreaker").setFallbackUri("forward:/circuitbreakerfallback")))
 						.uri("lb://ORDER-WS"))
 				.route("lb_route2", r -> r.path("/catalog-ms/**")
+						.filters(f -> f.circuitBreaker(c -> c.setName("testcirguitbreaker").setFallbackUri("forward:/circuitbreakerfallback")))
 						.uri("lb://CATALOG-WS"))				
 				.route("lb_route3", r -> r.path("/user-ms/**")
+						.filters(f -> f.circuitBreaker(c -> c.setName("testcirguitbreaker").setFallbackUri("forward:/circuitbreakerfallback")))	
 						.uri("lb://USER-WS"))
 				
 				
-				
+				/*
 				.route("path_route1", r -> r.path("/get")
 						.filters(f -> f.addRequestHeader("Hello", "World"))
 						.uri("http://localhost:8081"))
@@ -66,6 +69,7 @@ public class DemoRouteLocator {
 				
 				.route("websocket_route", r -> r.path("/echo")
 					.uri("ws://localhost:9000"))
+					*/
 				.build();
 	}
 

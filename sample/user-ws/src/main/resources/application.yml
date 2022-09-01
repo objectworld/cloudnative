@@ -57,7 +57,21 @@ feign:
         connectTimeout: 20000  # feign의 전역 timeout 설정 : 20초
         readTimeout: 20000
         loggerLevel: FULL ##basic
-    
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true # actuator 정보 노출을 위한 설정  
+        ringBufferSizeInClosedState: 10 # 닫힌 상태에서의 호출 수로, 서킷을 열어야 할지 결정할 때 사용한다.                                            
+        ringBufferSizeInHalfOpenState: 30 # 반열림 상태에서의 호출 수로, 서킷을 다시 열거나 닫힘 상태로 돌아갈지를 결정할 때 사용 한다.
+        failureRateThreshold: 50 # 실패한 호출에 대한 임계값(백분율)으로 이 값을 초과하면 서킷이 열린다.
+        waitDurationInOpenState: 10s # 열림 상태를 유지하는 시간, 해당 시간이후 반열림 상태로 변경된다.
+        slidingWindowType: COUNT_BASED
+
+    instances:
+      order-ws:
+        baseConfig: default
+            
 eureka:
   client:
     register-with-eureka: true

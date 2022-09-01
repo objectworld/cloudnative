@@ -5,7 +5,7 @@ import com.example.cloudnative.usersws.entity.UserEntity;
 
 import java.util.List;
 
-public interface UsersService {
+public interface UserService {
     UserDto createUser(UserDto userDetails);
     UserDto getUserDetailsByEmail(String email);
     UserDto getUserByUserId(String userId);

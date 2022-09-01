@@ -1,6 +1,6 @@
 package com.example.cloudnative.usersws.service;
 
-import com.example.cloudnative.usersws.client.OrdersServiceClient;
+import com.example.cloudnative.usersws.client.OrderServiceClient;
 import com.example.cloudnative.usersws.dto.UserDto;
 import com.example.cloudnative.usersws.entity.UserEntity;
 import com.example.cloudnative.usersws.model.OrderResponseModel;
@@ -22,19 +22,19 @@ import java.util.UUID;
 
 @Service
 @Slf4j
-public class UsersServiceImpl implements UsersService {
+public class UserServiceImpl implements UserService {
     UsersRepository repository;
 
     Environment env;
 
-    OrdersServiceClient ordersServiceClient;
+    OrderServiceClient orderServiceClient;
 
     @Autowired
-    public UsersServiceImpl(UsersRepository repository,
-                            OrdersServiceClient ordersServiceClient,
+    public UserServiceImpl(UsersRepository repository,
+                            OrderServiceClient orderServiceClient,
                             Environment env) {
         this.repository = repository;
-        this.ordersServiceClient = ordersServiceClient;
+        this.orderServiceClient = orderServiceClient;
         this.env = env;
     }
 
@@ -66,12 +66,10 @@ public class UsersServiceImpl implements UsersService {
     public UserDto getUserByUserId(String userId) {
         UserEntity userEntity = repository.findByUserId(userId);
 
-//        if (userEntity == null)
-//            throw new UsernameNotFoundException("User not found");
+        List<OrderResponseModel> ordersList = orderServiceClient.getOrders(userId);
 
         UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
 
-        List<OrderResponseModel> ordersList = ordersServiceClient.getOrders(userId);
         userDto.setOrders(ordersList);
 
         return userDto;
