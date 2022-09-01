@@ -22,7 +22,7 @@
 
  
 
-[그림 2-2] 가상머신 VS 컨테이너
+가상머신 VS 컨테이너
 
 
 
@@ -63,7 +63,7 @@ https://landscape.cncf.io/
 
 ![image-20220830094110933](./assets/image-20220830094110933.png)
 
-[그림 2-3] CNCF Cloud Native Landscape
+CNCF Cloud Native Landscape
 
  
 
@@ -75,7 +75,7 @@ https://landscape.cncf.io/
 
  
 
-##  1.2. 클라우드 네이티브 애플리케이션 체크리스트.
+##  1.3. 클라우드 네이티브 애플리케이션 체크리스트
 
 ![image-20220830094307915](./assets/image-20220830094307915.png)
 
@@ -85,7 +85,7 @@ https://landscape.cncf.io/
 
 
 
-## 1.2 클라우드 네이티브 애플리케이션 기술
+## 1.4 클라우드 네이티브 애플리케이션 기술
 
 - 클라우드 컴퓨팅 환경이란, 클라우드 공간에 가상화된 공유자원을 사용자의 요구에 따라 할당하고 해제할 수 있는 동적인 컴퓨팅 환경을 말하며, 클라우드에서 제공하는 서비스의 유형에 따라서, Publilc 클라우드, Private 클라우드, Hybrid 클라우드 등의 환경으로 나뉜다.
 
@@ -107,7 +107,7 @@ https://landscape.cncf.io/
 
  
 
-### 1.2.1  클라우드 네이티브 애플리케이션의 정의
+### 1.4.1  클라우드 네이티브 애플리케이션의 정의
 
 - 클라우드 네이티브 애플리케이션은 기존 및 새로운 소프트웨어 개발 패턴의 조합이라 고 볼 수 있다. 
 - 기존 패턴을 소프트웨어 자동화(인프라 및 시스템), API 통합 및 서비스 지향의 아키텍처라고 한다면, 클라우드 네이티브 패턴은 마이크로 서비스 아키텍처, 컨테이너화된 서비스, 분산 관리 및 오케스트레이션으로 구성되어 있다. 
@@ -115,7 +115,7 @@ https://landscape.cncf.io/
 
 
 
-### 1.2.2 클라우드 네이티브 애플리케이션의 특성
+### 1.4.2 클라우드 네이티브 애플리케이션의 특성
 
 - PC 가상화 솔루션을 제공하는 VMWare에서는 DevOps, CI/CD, 마이크로 서비스, 컨테이너 기술을 클라우드 네이티브 애플리케이션을 구성하는 4가지 주요 기술 이라고 소개 하였다. 
 
@@ -125,7 +125,7 @@ https://landscape.cncf.io/
 
 ![img](./assets/1-1.jpg)
 
-[그림 3-1] 클라우드 네이티브 애플리케이션 구성요소
+클라우드 네이티브 애플리케이션 구성요소
 
  
 
@@ -136,7 +136,7 @@ https://landscape.cncf.io/
 
   
 
-### 1.2.4  12 Factors
+### 1.4.4  12 Factors
 
 https://12factor.net/ko/
 
@@ -413,7 +413,7 @@ java -jar application.jar
 
 
 
-#### 1.2.5 결론
+#### 1.4.5 결론
 
 | Factor           | 적용방법                                                     |
 | ---------------- | ------------------------------------------------------------ |
@@ -432,7 +432,7 @@ java -jar application.jar
 
 
 
-### 1.2.5 15 Factors
+### 1.4.5 15 Factors
 
 - 2016년에는 클라우드 플랫폼 회사 피보탈(Pivotal)의 엔지니어인 케빈 호프만(Kevin Hoffman)이 최신 트렌드에 맞는 사용자의 요구 사항을 반영하여 헤로쿠의 12 Factors 에 3가지의 요소를 추가하였다15). 새롭게 추가된 내용은 아래와 같다.
 
@@ -476,15 +476,15 @@ java -jar application.jar
 
  
 
-## 1.3 모놀리스와 클라우드 네이티브 애플리케이션의 차이점
+## 1.5 모놀리스와 클라우드 네이티브 애플리케이션의 차이점
 
  <img src="./assets/image-20220810135438142.png" alt="image-20220810135438142" style="zoom:150%;" />
 
-[그림 3-2] 모놀리스와 마이크로서비스 아키텍처의 차이16)
+모놀리스와 마이크로서비스 아키텍처의 차이16)
 
   
 
-### 1.3.1  모놀리스 아키텍처
+### 1.5.1  모놀리스 아키텍처
 
 - 모놀리스 아키텍처에 의해 개발되는 애플리케이션의 대부분은 장기간에 걸쳐 순차적 으로 진행되는 폭포수(waterfall) 개발 방식으로 구축된다. 애플리케이션 자체가 하나의 구성으로 이뤄져 있는 경우가 대부분이며 일반적으로 다음과 같이 3개의 주요 부분으로 구성되었다. 
 
@@ -510,7 +510,7 @@ java -jar application.jar
 
  
 
-### 1.3.2  마이크로서비스 아키텍처
+### 1.5.2  마이크로서비스 아키텍처
 
 - 마이크로서비스 아키텍처는 소프트웨어 애플리케이션을 독립적으로 배치 가능하도록 서비스를 조합하고 설계하는 개발 방법을 말한다. 마이크로서비스의 창시자인 제임스 루이스(James Lewis)와 마틴 파울러(Martin Fowler)는 마이크로 서비스에 대해 다음과 같이 정의하였다.
 
@@ -560,7 +560,9 @@ java -jar application.jar
 
  ![img](./assets/clip_image115.jpg)
 
-[그림 4-1] 클라우드 네이티브 참조 아키텍처
+ 클라우드 네이티브 참조 아키텍처
+
+
 
 1) Application Definition/Development: 컨테이너 네이티브 애플리케이션을 구현하는데 필요한 메타데이터, 설정, 도구, 컨테이너 이미지 관리 도구 등
 
@@ -650,7 +652,7 @@ https://landscape.cncf.io/
 
 
 
-[그림 4-2] Cloud Native Landscape
+Cloud Native Landscape
 
  
 
@@ -660,7 +662,7 @@ https://landscape.cncf.io/
 
 ![Cloud Native Trail Map infographic](./assets/CNCF_TrailMap_latest-1.png)
 
-[그림 4-3] Cloud Native TrailMap
+Cloud Native TrailMap
 
  
 
@@ -1557,7 +1559,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 -  만약 MVC 패턴을 채택했다면 이 서비스의 `rent()`를 사용하는 것은 컨트롤러이다. 
 - 컨트롤러는 다시 HTTP를 통한 인터페이스를 클라이언트에게 제공하여 클라이언트가 `TotalRentalService`를 이용할 수 있도록 중간 역할을 한다. 이를 그림으로 나타내면 다음과 같다.
 
-![img](./assets/1657785410947.png)그림] 클라이언트와 애플리케이션의 통신 간 컨트롤러의 위치와 역할
+![img](./assets/1657785410947.png)클라이언트와 애플리케이션의 통신 간 컨트롤러의 위치와 역할
 
 - 이때 `TotalRentalService`는 인터페이스를 제공하므로 포트이며, 위 코드에선 `rent()`가 포트가 됩니다. 컨트롤러는 클라이언트의 HTTP API 요청을 받아 `rent()`라는 인터페이스를 연결해주고 있으므로 어댑터이다. 
 - 이렇게 외부에서 요청해야 동작하는 포트와 어댑터를 주요소(primary)라고 하며, 포트와 어댑터에 따라 주포트 혹은 주어댑터라고도 부른다.
@@ -1572,7 +1574,7 @@ public class TotalRentalServiceImpl implements TotalRentalService {
 
 - 아래는 포트와 어댑터 아키텍처를 따른 소프트웨어와 인터페이스, 기반 요소와의 관계를 표현한 그림이다. 
 
-![img](./assets/1657785510912.png)그림 3. 포트와 어댑터의 추상적인 개념
+![img](./assets/1657785510912.png)포트와 어댑터의 추상적인 개념
 
 - 앞서 설명드렸던 요소들이 모두 담겨 있는 위 그림을 통해 서로 간의 의존 관계를 파악할 수 있다. 
 - 포트
@@ -2084,10 +2086,6 @@ https://github.com/kirobo77/scg/blob/main/APIGateway.md
 
 
 ![img](https://blog.kakaocdn.net/dn/QC4Xs/btrCS0QoktP/JTWsRVzvK4EBGTUbqlbu5K/img.png)
-
-
-
-
 
 
 
@@ -3185,6 +3183,8 @@ feign:
 ```
 
 - *@Configuration* 빈과 Configuration Properties 이 모두 있는 경우 Configuration Properties이 *@Configuration* 값을 재정의한다.
+
+
 
 ### 4.6.7 인터셉터
 
