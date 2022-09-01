@@ -4257,9 +4257,13 @@ https://github.com/kirobo77/config.git
 
 - Apater, Port, Domain 영역으로 패키지를 분리해 본다.
 
+
+
 ### 5.10.2 성능을 고려하여 서비스를 개선
 
 - Kafka 및 Redis cache를 활용하여 API에 대한 성능을 개선해 본다.
+
+
 
 ### 5.10.3 JUNIT을 활용한 테스트코드를 작성
 
@@ -4328,6 +4332,8 @@ public class MockBeanAnnotationIntegrationTest {
     }
 }
   ```
+
+
 
 ### 5.10.4 컨테이너 환경에서 서비스를 실행
 
