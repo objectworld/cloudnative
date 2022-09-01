@@ -4310,8 +4310,8 @@ https://github.com/kirobo77/config.git
 
 - DB에 대한 Repoistory를  MockBean으로 선언하였고, 서비스 내 의존성 연결고리를 신경 안써도 되며 서비스의 호출, 결과를 임의로 조작하여 테스트를 지원한다.
 
-  ```java
- @RunWith(SpringRunner.class)
+```java
+@RunWith(SpringRunner.class)
 public class MockBeanAnnotationIntegrationTest {
     
     @MockBean
@@ -4331,8 +4331,7 @@ public class MockBeanAnnotationIntegrationTest {
         Mockito.verify(mockRepository).count();
     }
 }
-  ```
-
+```
 
 
 ### 5.10.4 컨테이너 환경에서 서비스를 실행
