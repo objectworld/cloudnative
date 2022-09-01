@@ -973,7 +973,9 @@ https://landscape.cncf.io/
 
 - Spring은 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크로서 엔터프라이즈급 애플리케이션을 개발하기 위한 모든 기능을 종합적으로 제공하는 경량화된 솔루션이다.
 
-- Spring은 경량 컨테이너로 자바 객체를 직접 Spring 안에서 관리합니다. 객체의 생성 및 소멸과 같은 생명 주기(Life cycle)을 관리하며, Spring 컨테이너에서 필요한 객체를 가져와 사용한다.
+- Spring은 경량 컨테이너로 자바 객체를 직접 Spring 안에서 관리한다.
+
+- 객체의 생성 및 소멸과 같은 생명 주기(Life cycle)을 관리하며, Spring 컨테이너에서 필요한 객체를 가져와 사용한다.
 
 - Spring의 가장 큰 특징인 IOC와 DI의 개념은 아래와 같다.
 
@@ -981,7 +983,7 @@ https://landscape.cncf.io/
   제어의 역전 (IOC, Inversion Of Control)
     ```
 
-    - 일반적으로 처음에 배우는 자바 프로그램에서는 **각 객체들이 프로그램의 흐름을 결정하고 각 객체를 직접 생성하고 조작하는 작업(객체를 직접 생성하여 메소드 호출)을 했습니다**. 즉, 모든 작업을 사용자가 제어하는 구조이다. 예를 들어 A 객체에서 B 객체에 있는 메소드를 사용하고 싶으면, B 객체를 직접 A 객체 내에서 생성하고 메소드를 호출한다.
+    - 일반적으로 처음에 배우는 자바 프로그램에서는 **각 객체들이 프로그램의 흐름을 결정하고 각 객체를 직접 생성하고 조작하는 작업(객체를 직접 생성하여 메소드 호출)을 한다**. 즉, 모든 작업을 사용자가 제어하는 구조이다. 예를 들어 A 객체에서 B 객체에 있는 메소드를 사용하고 싶으면, B 객체를 직접 A 객체 내에서 생성하고 메소드를 호출한다.
   - 하지만 **IOC가 적용된 경우, 객체의 생성을 특별한 관리 위임 주체에게 맡긴다.** 이 경우 **사용자는 객체를 직접 생성하지 않고, 객체의 생명주기를 컨트롤하는 주체는 다른 주체**가 된다. 즉, 사용자의 제어권을 다른 주체에게 넘기는 것을 IOC(제어의 역전) 라고 한다.
     
   - 요약하면 Spring의 Ioc란 `클래스 내부의 객체 생성 -> 의존성 객체의 메소드 호출`이 아닌, `스프링에게 제어를 위임하여 스프링이 만든 객체를 주입 -> 의존성 객체의 메소드 호출` 구조이다. 스프링에서는 모든 의존성 객체를 스프링이 실행될때 만들어주고 필요한 곳에 주입해준다.
@@ -1012,9 +1014,10 @@ https://landscape.cncf.io/
 
 ### 4.2.2 시스템 요구 사항
 
-스프링 부트 2.7.3에는 Java 8이 필요하며 [Java](https://www.java.com/) 18까지 호환됩니다. [Spring framework 5.3.22](https://docs.spring.io/spring-framework/docs/5.3.22/reference/html/) 이상도 필요합니다.
+- 스프링 부트 2.7.3에는 Java 8이 필요하며 [Java](https://www.java.com/) 18까지 호환된다.
+  - [Spring framework 5.3.22](https://docs.spring.io/spring-framework/docs/5.3.22/reference/html/) 이상 버전을 사용한다.
 
-명시적 빌드 지원은 다음 빌드 도구에 대해 제공됩니다.
+- 빌드 지원은 아래 빌드 도구를 지원한다.
 
 | 빌드 도구 | 버전                |
 | :-------- | :------------------ |
@@ -1023,7 +1026,7 @@ https://landscape.cncf.io/
 
 ### 4.2.3  서블릿 컨테이너
 
-Spring Boot는 다음과 같은 임베디드 서블릿 컨테이너를 지원합니다.
+- Spring Boot는 다음과 같은 임베디드 서블릿 컨테이너를 지원한다.
 
 | 이름         | 서블릿 버전 |
 | :----------- | :---------- |
@@ -3846,7 +3849,7 @@ public ConcurrentKafkaListenerContainerFactory<String, Greeting>
 }
 ```
 
-- spring-kafka JSON 직렬 변환기 및 역직렬 변환기는 spring-kafka 프로젝트에 대한 선택적 Maven 종속성이기도 한 Jackson 라이브러리를 사용합니다.
+- spring-kafka JSON 직렬 변환기 및 역직렬 변환기는 spring-kafka 프로젝트에 대한 선택적 Maven 종속성이기도 한 Jackson 라이브러리를 사용한다.
   - *pom.xml* 
 
 ```java
@@ -3857,9 +3860,7 @@ public ConcurrentKafkaListenerContainerFactory<String, Greeting>
 </dependency>
 ```
 
-- 최신 버전의 Jackson을 사용하는 대신 spring-kafka 의 *pom.xml* 에 추가된 버전을 사용하는 것이 좋습니다 .
-
-- Greeting 메시지 를 사용하는 리스너를 작성해야 합니다.
+- Greeting 메시지 를 사용하는 리스너를 작성해야 한다.
 
 ```java
 @KafkaListener(
@@ -4257,11 +4258,11 @@ https://github.com/kirobo77/config.git
 
 - Apater, Port, Domain 영역으로 패키지를 분리해 본다.
 
-### 5.10.2 성능을 고려하여 서비스를 개선해 보세요.
+### 5.10.2 성능을 고려하여 서비스를 개선
 
 - Kafka 및 Redis cache를 활용하여 API에 대한 성능을 개선해 본다.
 
-### 5.10.3 JUNIT을 활용한 테스트코드를 작성해 보세요.
+### 5.10.3 JUNIT을 활용한 테스트코드를 작성
 
 - junit에서는 아래와 같이 단위/통합테스트 할 수 있는 다양한 기능을 제공한다.
 
@@ -4329,7 +4330,7 @@ public class MockBeanAnnotationIntegrationTest {
 }
   ```
 
-### 5.10.4 컨테이너 환경에서 서비스를 실행해 보세요.
+### 5.10.4 컨테이너 환경에서 서비스를 실행
 
 #### 5.10.4.1 JIB
 
