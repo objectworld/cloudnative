@@ -61,7 +61,7 @@ https://landscape.cncf.io/
   - CNCF에서는 클라우드 네이티브 기술 구현을 위한 백여 가지 오픈소스 프로젝트들이 진행 중
 - 풍부한 오픈소스 생태계를 통해 활용도가 높은 오픈소스를 도입한다면 해당 솔루션을 사용한 애플리케이션 간의 상호운용성과 이식성 수준을 향상 시킬 수 있다.
 
-![image-20220830094110933](./assets/image-20220830094110933.png)
+![image-20220830094110933](D:\cloudnative/assets/image-20220830094110933.png)
 
 [그림 2-3] CNCF Cloud Native Landscape
 
@@ -77,11 +77,11 @@ https://landscape.cncf.io/
 
 ##  1.2. 클라우드 네이티브 애플리케이션 체크리스트.
 
-![image-20220830094307915](./assets/image-20220830094307915.png)
+![image-20220830094307915](D:\cloudnative/assets/image-20220830094307915.png)
 
  
 
-![image-20220830094337378](./assets/image-20220830094337378.png)
+![image-20220830094337378](D:\cloudnative/assets/image-20220830094337378.png)
 
 
 
@@ -123,7 +123,7 @@ https://landscape.cncf.io/
 
  
 
-![img](./assets/1-1.jpg)
+![img](D:\cloudnative/assets/1-1.jpg)
 
 [그림 3-1] 클라우드 네이티브 애플리케이션 구성요소
 
@@ -1502,7 +1502,7 @@ public class MyConfiguration {
 - Spring Boot 프로젝트를 쉽게 생성할 수 있는 도구를 제공한다. 
 - 빌드 시스템 및 패키징, 언어, 패키징, 플랫폼 버전 및 프로젝트에 추가할 종속성에 대한 설정을 제공한다.
 
-[![img](./assets/image-20220627130205043.png)](https://github.com/kirobo77/scg/blob/main/assets/image-20220627130205043.png)
+[![img](D:\cloudnative/assets/image-20220627130205043.png)](https://github.com/kirobo77/scg/blob/main/assets/image-20220627130205043.png)
 
 - Spring Initializr은 다양한 IDE 환경 및 API/CLI 형태로도 제공한다.
 
