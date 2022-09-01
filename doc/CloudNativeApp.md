@@ -3691,9 +3691,9 @@ public void sendMessage(String message) {
 }
 ```
 
-### 4.9.5 메시지 소비
+### 4.9.5 이벤트 수신
 
-- @KafkaListener 어노테이션을 통해 원하는 topic에 대한 이베느를 받을 수 있다.
+- @KafkaListener 어노테이션을 통해 원하는 topic에 대한 메시지를 수신 받을 수 있다.
 
 ```java
 @KafkaListener(topics = "topicName", groupId = "foo")
@@ -3702,7 +3702,7 @@ public void listenGroupFoo(String message) {
 }
 ```
 
-- Topic 에 대해 각각 다른 Group ID를 가진 여러 리스너를 구현할 수 있다. 또한 한 Consumer는 다양한 Topic 메시지를 소비할 수 있다.
+- Topic 에 대해 각각 다른 Group ID를 가진 여러 리스너를 구현할 수 있다. 또한 한 Consumer는 다양한 Topic 메시지를 수신 할 수 있다.
 
 ```java
 @KafkaListener(topics = "topic1, topic2", groupId = "foo")
