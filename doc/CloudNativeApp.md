@@ -3983,7 +3983,7 @@ spring:
 
 ![image-20220817110036458](./assets/image-20220817110036458.png)
 
-[그림 5-1] Pilot Application의 서비스 흐름
+Pilot Application의 서비스 흐름
 
 
 
